@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'หน้าข้อมูลพนักงานในทีม')
+@section('title', 'หน้าของหัวหน้าทีม')
 @section('content')
-    <h1>ข้อมูลพนักงานในทีม</h1>
+    <h1 class="display-4 text-center">ยินดีต้อนรับคุณ Somsak Jaidee</h1>
 @endsection
