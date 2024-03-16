@@ -58,29 +58,27 @@
                     <option value="2">ชุดที่ 2</option>
                 </select>
             </div>
-
-            <div class="col-md-6">
-                <label for="eval_topic" class="form-label">เลือกหัวข้อการประเมิน:</label>
-                <select class="form-select" id="eval_topic" name="eval_topic">
-                    <option value="0"></option>
-                    <option value="1">ยอดขาย</option>
-                    <option value="2">สินค้า</option>
-                    <option value="3">ความสัมพันธ์</option>
-                    <option value="4">ยอดใบเสนอราคา</option>
-                </select>
-            </div>
         </div>
 
-        <hr>
+        <div class="">
+            <a href="/evaluationsubmitform" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านยอดขาย</a> <br><br>
+            <a href="/evaluationsubmitform" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านสินค้า</a> <br><br>
+            <a href="/evaluationsubmitform" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านความสัมพันธ์กับลูกค้า</a> <br><br>
+            <a href="/evaluationsubmitform" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านยอดใบเสนอราคา</a> <br><br>
+        </div>
 
-        <div class="container">
+          
+           
+       
+
+        <!-- <div class="container">
             <form action="#">
                 <button type="submit" class="btn btn-primary" onclick="saveData()">บันทึก</button>
                 <button type="submit" class="btn btn-secondary" onclick="cancelData()">ยกเลิก</button>
             </form>
-        </div>
+        </div> -->
         
-        <script>
+       <!-- <script>
             function saveData() {
                 alert("บันทึกข้อมูลเรียบร้อย");
                 window.location.href = 'evaluationsubmitform.blade.php';
@@ -88,7 +86,7 @@
             function cancelData() {
                 alert("ยกเลิกเรียบร้อย");
             }
-        </script>
+        </script> -->
     </form>
 </div>
 @endsection
