@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CriteriakpiController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SaleteamController;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,10 @@ Route::post('/saleteam', [SaleteamController::class, 'listofname'])->name('salet
 Route::get('/saleteam/{saleteam}/edit', [SaleteamController::class, 'edit'])->name('saleteam.edit');
 Route::put('/saleteam/{saleteam}/update', [SaleteamController::class, 'update'])->name('saleteam.update');
 Route::delete('/saleteam/{saleteam}/destroy', [SaleteamController::class, 'destroy'])->name('saleteam.destroy');
+
+Route::get('/criteriakpi', [CriteriakpiController::class, 'index'])->name('criteriakpi.index');
+Route::get('/criteriakpi/create', [CriteriakpiController::class, 'create'])->name('criteriakpi.create');
+Route::post('/criteriakpi', [CriteriakpiController::class, 'listofname'])->name('criteriakpi.listofname');
+Route::get('/criteriakpi/{criteriakpi}/edit', [CriteriakpiController::class, 'edit'])->name('criteriakpi.edit');
+Route::put('/criteriakpi/{criteriakpi}/update', [CriteriakpiController::class, 'update'])->name('criteriakpi.update');
+Route::delete('/criteriakpi/{criteriakpi}/destroy', [CriteriakpiController::class, 'destroy'])->name('criteriakpi.destroy');
