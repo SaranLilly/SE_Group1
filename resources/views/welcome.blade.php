@@ -4,11 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<<<<<<< HEAD
         <title>Laravel</title>
-=======
-        <title>Laravel222222 5555555555 v2</title>
->>>>>>> ba92794d2f30a834f978abd3515f146b4c68c995
+
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

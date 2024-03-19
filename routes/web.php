@@ -1,32 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SetkpiController;
 
-<<<<<<< HEAD
-=======
-// Route::get('/', function () {
-//     return view('contact');
-// });
-
->>>>>>> ba92794d2f30a834f978abd3515f146b4c68c995
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
+Route::get('/setkpi',[SetkpiController::class,'index'])->name('Setkpi.index');
 
-Auth::routes();
+Route::get('/setkpi/create',[SetkpiController::class,'create'])->name('Setkpi.create');
+Route::post('/setkpi/rrr',[SetkpiController::class,'store'])->name('test.store');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
->>>>>>> ba92794d2f30a834f978abd3515f146b4c68c995
+Route::get('/setkpi/update',[SetkpiController::class,'update'])->name('Setkpi.update');
+Route::post('/setkpi',[SetkpiController::class,'updates'])->name('Setkpi.updates');
+
+Route::get('/setkpi/delete',[SetkpiController::class,'delete'])->name('Setkpi.delete');
