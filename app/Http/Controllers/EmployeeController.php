@@ -11,14 +11,9 @@ class EmployeeController extends Controller
     public function index()
     {
         // $employees = employee::all();
-
-        // $employees = DB::table('employee')->get();
-        // $employees=DB::table('employee')
-
         $employees = DB::table('employee')
             ->leftJoin('saleteam', 'saleteam.saleTeamID', '=', 'employee.saleTeamID')
             ->leftJoin('position', 'position.positionID', '=', 'employee.positionID')
-        //->select('employee.prefix', 'employee.firstName', 'employee.lastName', 'employee.nickname', 'employee.userName', 'employee.password', 'employee.phoneNumber', 'employee.idCard', 'employee.birth', 'employee.email', 'position.positionName', 'saleteam.teamName')
             ->select('employee.*', 'position.positionName', 'saleteam.teamName')
             ->get();
         return view('employee.index', ['employees' => $employees]);
