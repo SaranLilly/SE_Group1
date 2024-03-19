@@ -12,7 +12,7 @@
         @csrf
         @method('post')
         <div>
-            <input type="text" name="id" value="{{$setid->setkpi}}">
+            <input type="text" name="id" value="{{$setid->setid}}">
             <input type="text" name="titleset" placeholder="title">
         </div>
         <div>

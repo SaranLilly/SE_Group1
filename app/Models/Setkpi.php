@@ -12,16 +12,16 @@ class Setkpi extends Model
     use HasFactory;
     //public $timestamps = false;
     public static function getAll(){
-        $setkpis = DB::table('setkpis')->get();
+        $setkpis = DB::table('setkpi')->get();
         return $setkpis;
     }
     public static function getID(Request $request){
-        $setkpis = DB::table('setkpis')->get();
+        $setkpis = DB::table('setkpi')->get();
 
         return $setkpis;
     }
     public static function add(Request $request){
-        DB::insert('insert into setkpis(
+        DB::insert('insert into setkpi(
             idset,titleset
             ) values (?,?)' ,[
                 NULL,
@@ -29,13 +29,14 @@ class Setkpi extends Model
             ]);
     }
     public static function sdelete(Request $request){
-        DB::delete('delete from setkpis where idset = ?',
+        DB::delete('delete from setkpi where idset = ?',
         [$request->idset]);
     }
     public static function supdate(Request $request){
-        $id=$request->titleset;
+        $title=$request->titleset;
+        dd($title);
         DB::update(
-            'update setkpis set titleset = "00" where idset = ?',
+            'update setkpi set titleset = {{$title}} where idset = ?',
             [$request->id]);
 
            // UPDATE `setkpis` SET `titleset` = 'ssssssa' WHERE `setkpis`.`idset` = 3;

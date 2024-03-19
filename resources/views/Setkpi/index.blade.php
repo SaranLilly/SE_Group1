@@ -28,7 +28,7 @@
             <tr>
             <td><label name="id">{{ $setkpi->idset}}</label></td>
             <td><label name="title">{{ $setkpi->titleset}}</label></td>
-            <td><a href="{{route('Setkpi.update',['idset'=>$setkpi->idset])}}">update</a>
+            <td><a href="{{route('Setkpi.update',['setid'=>$setkpi->idset])}}">update</a>
             <td><a href="{{route('Setkpi.delete',['idset'=>$setkpi->idset])}}" >delete</a></td>
             </tr>
             @endforeach            
