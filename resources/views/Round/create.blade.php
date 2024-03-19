@@ -13,7 +13,7 @@
         @method('post')
         <div>
             <label>date</label>
-            <input type="date" name="date" placeholder="title">
+            <input type="date" name="date" placeholder="date">
         </div>
         <div>
             <input type="submit" value="save">

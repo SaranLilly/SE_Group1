@@ -28,8 +28,14 @@
             <tr>
             <td><label name="id">{{ $round->idround }}</label></td>
             <td><label name="date">{{ $round->date}}</label></td>
-            <td><a href="{{route('round.edit',['idround'=>$round->idround])}}">update</a>
-            <td><a href="{{route('round.delete',['idround'=>$round->idround])}}" >delete</a></td>
+            <td><a href="{{ route('round.edit',['round' => $round->idround]) }}">แก้ไข</a></td>
+            <td>
+              <form method="POST" action="{{ route('round.delete',['round'=> $round->idround]) }}">
+                  @csrf
+                  @method('delete')
+                  <input type="submit" value="ลบ">
+              </form>
+          </td>
             </tr>
             @endforeach            
         </tbody>

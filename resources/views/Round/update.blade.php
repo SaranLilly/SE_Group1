@@ -8,15 +8,15 @@
 </head>
 <body>
     <h1>update</h1>
-    <form method="post" action="{{route('round.update')}}">
+    <form method="post" action="{{route('round.update',['round'=>$round->idround])}}">
         @csrf
-        @method('post')
+        @method('put')
         <div>
-            <input type="text" name="id" value="{{$idround->idround}}">
-            <input type="date" name="date" placeholder="title">
+            <input type="date" name="date" value="{{$round->date}}">
         </div>
+        
         <div>
-            <input type="submit" value="save">
+            <input type="submit" value="update">
         </div>
     </form>
 </body>
