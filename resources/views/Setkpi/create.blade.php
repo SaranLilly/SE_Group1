@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>create</h1>
-    <form method="post" action="{{route('Setkpi.store')}}">
+
+    <form method="post" action="{{route('setkpi.store')}}">
         @csrf
         @method('post')
         <div>

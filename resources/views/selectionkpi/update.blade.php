@@ -8,13 +8,16 @@
 </head>
 <body>
     <h1>update</h1>
-
-    <form method="post" action="{{route('setkpi.update',['setkpi'=>$setkpi->idset])}}">
+    <form method="post" action="{{route('selectionkpi.update',['selectionkpi'=>$selectionkpi->idselection])}}">
         @csrf
         @method('put')
         <div>
-            <input type="text" name="titleset" placeholder="title" value="{{$setkpi->titleset}}">
+            <input type="text" name="idset" placeholder="idset" value="{{$selectionkpi->idset}}">
         </div>
+        <div>
+            <input type="text" name="idcriteriakpi" placeholder="idcriteriakpi" value="{{$selectionkpi->idcriteriakpi}}">
+        </div>
+        
         
         <div>
             <input type="submit" value="update">

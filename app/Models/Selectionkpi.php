@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Selectionkpi extends Model
 {
     use HasFactory;
+    protected $table = 'selectionkpi';
+    protected $primaryKey = 'idselection';
     protected $fillable = [
         'idset',
         'idcriteriakpi'
     ];
+    public $timestamps = false;
 }

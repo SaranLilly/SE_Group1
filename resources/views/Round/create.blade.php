@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>create</h1>
-    <form method="post" action="{{route('Round.store')}}">
+    <form method="post" action="{{route('round.store')}}">
         @csrf
         @method('post')
         <div>

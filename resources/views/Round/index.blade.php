@@ -28,8 +28,8 @@
             <tr>
             <td><label name="id">{{ $round->idround }}</label></td>
             <td><label name="date">{{ $round->date}}</label></td>
-            <td><a href="{{route('Round.edit',['idround'=>$round->idround])}}">update</a>
-            <td><a href="{{route('Round.delete',['idround'=>$round->idround])}}" >delete</a></td>
+            <td><a href="{{route('round.edit',['idround'=>$round->idround])}}">update</a>
+            <td><a href="{{route('round.delete',['idround'=>$round->idround])}}" >delete</a></td>
             </tr>
             @endforeach            
         </tbody>

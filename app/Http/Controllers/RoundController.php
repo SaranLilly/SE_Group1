@@ -2,56 +2,46 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Round;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Round;
 
 class RoundController extends Controller
 {
     public function index(){
-        $rounds=Round::getAllround();
-        return view('Round.index',['rounds'=>$rounds]);
+        $rounds = DB::table('round')->get();
+        return view('round.index', ['rounds' => $rounds]);
     }
     public function create(){
-        return view('Round.create');
+        return view('round.create');
     }
     public function store(Request $request){
-        //dd($request->titleset);
-        /*
-        DB::insert('insert into setkpis(
-            idset,titleset
-            ) values (?,?)' ,[
-                NULL,
-                $request->titleset
-            ]);*/
-        /*$data = $request->Validated([
-            'titleset'=>'request'
+        $data = $request->validate([
+            'date' => 'required|max:20',
+
         ]);
-        $a=Setkpi::create($data);*/
-       // Setkpi('Setkpi.index');
-       Round::addround($request);
 
-        return redirect(route('Round.index'));
-        
-    }
-    public function delete(Request $request){
-        //dd($request->idset);
-        Round::deleteround($request);
-        return redirect(route('Round.index'));
-    }
-    public function edit(Request $request){
-        $idround = $request;
-        
-        //return view('Setkpi.update');
-        //$setid = $request->setkpi;
-        //dd($request->setkpi);
-        return view('Round.update',['idround'=>$idround]);
-    }
-    public function update(Request $request){
-        //dd($request);
+        Round::create($data);
 
-        Round::updateround($request);
-        //return redirect(route('Setkpi.index'));
-        //Setkpi::setdelete($request);
-        return redirect(route('Round.index'));
+        return redirect(route('round.index'));
     }
+    public function edit(Round $round){
+
+        return view('round.update', ['round' => $round]);
+    }
+    public function update(Round $round, Request $request){
+        $data = $request->validate([
+            'date' => 'required',
+        ]);
+
+        $round->update($data);
+
+        return redirect(route('round.index'))->with('success', 'round updated successfully');
+    }
+
+    public function delete(Round $round){
+        $round->delete();
+        return redirect(route('round.index'))->with('success', 'round delete successfully');
+    }
+    
 }

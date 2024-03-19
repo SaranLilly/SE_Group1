@@ -5,54 +5,44 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Setkpi;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class SetkpiController extends Controller
 {
     public function index(){
-        $setkpis=Setkpi::getAllsetkpi();
-        return view('Setkpi.index',['setkpis'=>$setkpis]);
+
+        $setkpis = DB::table('setkpi')->get();
+        return view('setkpi.index', ['setkpis' => $setkpis]);
+
     }
     public function create(){
-        return view('Setkpi.create');
+        return view('setkpi.create');
     }
     public function store(Request $request){
-        //dd($request->titleset);
-        /*
-        DB::insert('insert into setkpis(
-            idset,titleset
-            ) values (?,?)' ,[
-                NULL,
-                $request->titleset
-            ]);*/
-        /*$data = $request->Validated([
-            'titleset'=>'request'
+        $data = $request->validate([
+            'titleset' => 'required|max:20',
+
         ]);
-        $a=Setkpi::create($data);*/
-       // Setkpi('Setkpi.index');
-       Setkpi::addsetkpi($request);
+        Setkpi::create($data);
 
-        return redirect(route('Setkpi.index'));
-        
+        return redirect(route('setkpi.index'));
     }
-    public function delete(Request $request){
-        //dd($request->idset);
-        Setkpi::deletesetkpi($request);
-        return redirect(route('Setkpi.index'));
-    }
-    public function edit(Request $request){
-        $setid = $request;
-        
-        //return view('Setkpi.update');
-        //$setid = $request->setkpi;
-        //dd($request->setkpi);
-        return view('Setkpi.update',['setid'=>$setid]);
-    }
-    public function update(Request $request){
-        //dd($request);
+    public function edit(Setkpi $setkpi){
 
-        Setkpi::updatesetkpi($request);
-        //return redirect(route('Setkpi.index'));
-        //Setkpi::setdelete($request);
-        return redirect(route('Setkpi.index'));
+        return view('setkpi.update', ['setkpi' => $setkpi]);
     }
+    public function update(Setkpi $setkpi, Request $request){
+        $data = $request->validate([
+            'titleset' => 'required|max:20',
+        ]);
+
+        $setkpi->update($data);
+
+        return redirect(route('setkpi.index'))->with('success', 'setkpi updated successfully');
+    }
+
+    public function delete(Setkpi $setkpi){
+        $setkpi->delete();
+        return redirect(route('setkpi.index'))->with('success', 'setkpi delete successfully');
+}
 }

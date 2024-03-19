@@ -7,13 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>update</h1>
-    <form method="post" action="{{route('round.update')}}">
+    <h1>create</h1>
+    <form method="post" action="{{route('selectionkpi.store')}}">
         @csrf
         @method('post')
         <div>
-            <input type="text" name="id" value="{{$idround->idround}}">
-            <input type="date" name="date" placeholder="title">
+            <label>set</label>
+            <input type="text" name="idset" placeholder="idset EX 1">
+            <label>kpi</label>
+            <input type="text" name="idcriteriakpi" placeholder="idcriteriakpi EX 1 ">
         </div>
         <div>
             <input type="submit" value="save">
