@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-</head>
+</head> --}}
+@extends('layout')
+@section('title', 'ข้อมูลพนักงาน')
+@section('content')
 
 <body>
-    <h1>Employee</h1>
+    <h2 class="text pb-4">ข้อมูลพนักงาน</h2>
 
     {{-- <div>
         <a href="{{ route('employee.create') }}">New Employee</a>
@@ -23,7 +26,7 @@
         @endif
     </div>
     <div>
-        <table border="1">
+        <table class="table">
             <tr>
                 <th>ลำดับ</th>
                 <th>คำนำหน้าชื่อ</th>
