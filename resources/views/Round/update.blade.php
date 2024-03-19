@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>create</h1>
-    <form method="post" action="{{route('Setkpi.store')}}">
+    <h1>update</h1>
+    <form method="post" action="{{route('Round.update')}}">
         @csrf
         @method('post')
         <div>
-            <label>titleset</label>
-            <input type="text" name="titleset" placeholder="title">
+            <input type="text" name="id" value="{{$idround->idround}}">
+            <input type="date" name="date" placeholder="title">
         </div>
         <div>
             <input type="submit" value="save">

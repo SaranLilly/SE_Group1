@@ -8,12 +8,12 @@
 </head>
 <body>
     <h1>create</h1>
-    <form method="post" action="{{route('Setkpi.store')}}">
+    <form method="post" action="{{route('Round.store')}}">
         @csrf
         @method('post')
         <div>
-            <label>titleset</label>
-            <input type="text" name="titleset" placeholder="title">
+            <label>date</label>
+            <input type="date" name="date" placeholder="title">
         </div>
         <div>
             <input type="submit" value="save">
