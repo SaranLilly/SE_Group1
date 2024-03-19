@@ -23,7 +23,7 @@
     <div>
         <table border="1">
             <tr>
-                <th>ลำดับ</th>
+                {{-- <th>ลำดับ</th> --}}
                 <th>คำนำหน้าชื่อ</th>
                 <th>ชื่อ</th>
                 <th>นามสกุล</th>
@@ -42,7 +42,7 @@
             @foreach ($employees as $employee)
             
                 <tr>
-                    <td>{{ $employee->empID}}</td>
+                    {{-- <td>{{ $employee->empID}}</td> --}}
                     <td>{{ $employee->prefix}}</td>
                     <td>{{ $employee->firstName}}</td>
                     <td>{{ $employee->lastName}}</td>
