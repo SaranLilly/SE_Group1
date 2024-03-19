@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CriteriakpiController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\SaleteamController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,10 @@ Route::post('/criteriakpi', [CriteriakpiController::class, 'listofname'])->name(
 Route::get('/criteriakpi/{criteriakpi}/edit', [CriteriakpiController::class, 'edit'])->name('criteriakpi.edit');
 Route::put('/criteriakpi/{criteriakpi}/update', [CriteriakpiController::class, 'update'])->name('criteriakpi.update');
 Route::delete('/criteriakpi/{criteriakpi}/destroy', [CriteriakpiController::class, 'destroy'])->name('criteriakpi.destroy');
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+Route::get('/feedback/create', [FeedbackController::class, 'create'])->name('feedback.create');
+Route::post('/feedback', [FeedbackController::class, 'listofname'])->name('feedback.listofname');
+Route::get('/feedback/{feedback}/edit', [FeedbackController::class, 'edit'])->name('feedback.edit');
+Route::put('/feedback/{feedback}/update', [FeedbackController::class, 'update'])->name('feedback.update');
+Route::delete('/feedback/{feedback}/destroy', [FeedbackController::class, 'destroy'])->name('feedback.destroy');
