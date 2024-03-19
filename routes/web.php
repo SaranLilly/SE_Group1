@@ -26,3 +26,6 @@ Route::post('/employee',[EmployeeController::class, 'listofname'])->name('employ
 Route::get('/employee/{employee}/edit',[EmployeeController::class, 'edit'])->name('employee.edit');
 Route::put('/employee/{employee}/update',[EmployeeController::class, 'update'])->name('employee.update');
 Route::delete('/employee/{employee}/destroy',[EmployeeController::class, 'destroy'])->name('employee.destroy');
+
+
+
