@@ -22,7 +22,7 @@
                 <td>ปวัญญา</td>
                 <td>สุวรรณวงศ์</td>
                 <td>0898616547</td>
-                <td><a href="#">click</a></td>
+                <td>พนักงานฝ่ายขาย</td>
                 <td><a href="#">click</a></td>
                 <td><a href="#">click</a></td>
             </tr>
@@ -32,7 +32,7 @@
                 <td>กิตติพงษ์</td>
                 <td>พุกเฮง</td>
                 <td>0987654321</td>
-                <td><a href="#">click</a></td>
+                <td>พนักงานฝ่ายขาย</td>
                 <td><a href="#">click</a></td>
                 <td><a href="#">click</a></td>
             </tr>
@@ -42,7 +42,7 @@
                 <td>ธยานี</td>
                 <td>เจริญวัฒนา</td>
                 <td>0981256792</td>
-                <td><a href="#">click</a></td>
+                <td>พนักงานฝ่ายขาย</td>
                 <td><a href="#">click</a></td>
                 <td><a href="#">click</a></td>
             </tr>
