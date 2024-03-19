@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class SetkpiController extends Controller
 {
     public function index(){
-        $setkpis=Setkpi::getAll();
+        $setkpis=Setkpi::getAllsetkpi();
         return view('Setkpi.index',['setkpis'=>$setkpis]);
     }
     public function create(){
@@ -29,17 +29,17 @@ class SetkpiController extends Controller
         ]);
         $a=Setkpi::create($data);*/
        // Setkpi('Setkpi.index');
-       Setkpi::add($request);
+       Setkpi::addsetkpi($request);
 
         return redirect(route('Setkpi.index'));
         
     }
     public function delete(Request $request){
         //dd($request->idset);
-        Setkpi::sdelete($request);
+        Setkpi::deletesetkpi($request);
         return redirect(route('Setkpi.index'));
     }
-    public function update(Request $request){
+    public function edit(Request $request){
         $setid = $request;
         
         //return view('Setkpi.update');
@@ -47,10 +47,10 @@ class SetkpiController extends Controller
         //dd($request->setkpi);
         return view('Setkpi.update',['setid'=>$setid]);
     }
-    public function updates(Request $request){
+    public function update(Request $request){
         //dd($request);
 
-        Setkpi::supdate($request);
+        Setkpi::updatesetkpi($request);
         //return redirect(route('Setkpi.index'));
         //Setkpi::setdelete($request);
         return redirect(route('Setkpi.index'));

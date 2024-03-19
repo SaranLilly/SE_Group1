@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>update</h1>
-    <form method="post" action="{{route('Setkpi.updates')}}">
+    <form method="post" action="{{route('Setkpi.update')}}">
         @csrf
         @method('post')
         <div>
