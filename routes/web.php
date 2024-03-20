@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CriteriakpiController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\SaleteamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\RoundController;
@@ -46,3 +50,31 @@ Route::post('/result', [ResultsController::class, 'store'])->name('result.store'
 Route::get('/result/{result}/edit', [ResultsController::class, 'edit'])->name('result.edit');
 Route::put('/result/{result}/update', [ResultsController::class, 'update'])->name('result.update');
 Route::delete('/result/{result}/delete', [ResultsController::class, 'delete'])->name('result.delete');
+
+Route::get('/employee', [EmployeeController::class, 'index'])->name('employee.index');
+Route::get('/employee/create', [EmployeeController::class, 'create'])->name('employee.create');
+Route::post('/employee', [EmployeeController::class, 'listofname'])->name('employee.listofname');
+Route::get('/employee/{employee}/edit', [EmployeeController::class, 'edit'])->name('employee.edit');
+Route::put('/employee/{employee}/update', [EmployeeController::class, 'update'])->name('employee.update');
+Route::delete('/employee/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employee.destroy');
+
+Route::get('/saleteam', [SaleteamController::class, 'index'])->name('saleteam.index');
+Route::get('/saleteam/create', [SaleteamController::class, 'create'])->name('saleteam.create');
+Route::post('/saleteam', [SaleteamController::class, 'listofname'])->name('saleteam.listofname');
+Route::get('/saleteam/{saleteam}/edit', [SaleteamController::class, 'edit'])->name('saleteam.edit');
+Route::put('/saleteam/{saleteam}/update', [SaleteamController::class, 'update'])->name('saleteam.update');
+Route::delete('/saleteam/{saleteam}/destroy', [SaleteamController::class, 'destroy'])->name('saleteam.destroy');
+
+Route::get('/criteriakpi', [CriteriakpiController::class, 'index'])->name('criteriakpi.index');
+Route::get('/criteriakpi/create', [CriteriakpiController::class, 'create'])->name('criteriakpi.create');
+Route::post('/criteriakpi', [CriteriakpiController::class, 'listofname'])->name('criteriakpi.listofname');
+Route::get('/criteriakpi/{criteriakpi}/edit', [CriteriakpiController::class, 'edit'])->name('criteriakpi.edit');
+Route::put('/criteriakpi/{criteriakpi}/update', [CriteriakpiController::class, 'update'])->name('criteriakpi.update');
+Route::delete('/criteriakpi/{criteriakpi}/destroy', [CriteriakpiController::class, 'destroy'])->name('criteriakpi.destroy');
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+Route::get('/feedback/create', [FeedbackController::class, 'create'])->name('feedback.create');
+Route::post('/feedback', [FeedbackController::class, 'listofname'])->name('feedback.listofname');
+Route::get('/feedback/{feedback}/edit', [FeedbackController::class, 'edit'])->name('feedback.edit');
+Route::put('/feedback/{feedback}/update', [FeedbackController::class, 'update'])->name('feedback.update');
+Route::delete('/feedback/{feedback}/destroy', [FeedbackController::class, 'destroy'])->name('feedback.destroy');
