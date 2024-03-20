@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\RoundController;
-
+use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\SelectionkpiController;
 
 
@@ -30,3 +30,10 @@ Route::post('/selectionkpi', [SelectionkpiController::class, 'store'])->name('se
 Route::get('/selectionkpi/{selectionkpi}/edit', [SelectionkpiController::class, 'edit'])->name('selectionkpi.edit');
 Route::put('/selectionkpi/{selectionkpi}/update', [SelectionkpiController::class, 'update'])->name('selectionkpi.update');
 Route::delete('/selectionkpi/{selectionkpi}/delete', [SelectionkpiController::class, 'delete'])->name('selectionkpi.delete');
+
+Route::get('/evaluation', [EvalutionController::class, 'index'])->name('evaluation.index');
+Route::get('/evaluation/create', [EvalutionController::class, 'create'])->name('evaluation.create');
+Route::post('/evaluation', [EvalutionController::class, 'store'])->name('evaluation.store');
+Route::get('/evaluation/{evaluation}/edit', [EvalutionController::class, 'edit'])->name('evaluation.edit');
+Route::put('/evaluation/{evaluation}/update', [EvalutionController::class, 'update'])->name('evaluation.update');
+Route::delete('/evaluation/{evaluation}/delete', [EvalutionController::class, 'delete'])->name('evaluation.delete');

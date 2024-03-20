@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Round;
 use App\Models\Selectionkpi;
+use App\Models\Setkpi;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -18,7 +20,9 @@ class SelectionkpiController extends Controller
         return view('selectionkpi.index', ['selectionkpis' => $selectionkpis]);
     }
     public function create(){
-        return view('selectionkpi.create');
+        $setkpis= Setkpi::all();
+        $criteriakpis=DB::table('criteriakpi')->get();
+        return view('selectionkpi.create', ['setkpis' => $setkpis, 'criteriakpis' => $criteriakpis]);
     }
     public function store(Request $request){
         $data = $request->validate([
@@ -32,8 +36,9 @@ class SelectionkpiController extends Controller
         return redirect(route('selectionkpi.index'));
     }
     public function edit(Selectionkpi $selectionkpi){
-
-        return view('selectionkpi.update', ['selectionkpi' => $selectionkpi]);
+        $setkpis= Setkpi::all();
+        $criteriakpis=DB::table('criteriakpi')->get();
+        return view('selectionkpi.update', ['selectionkpi' => $selectionkpi ,'setkpis' => $setkpis, 'criteriakpis' => $criteriakpis]);
     }
     public function update(Selectionkpi $selectionkpi, Request $request){
         $data = $request->validate([

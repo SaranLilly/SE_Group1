@@ -12,10 +12,20 @@
         @csrf
         @method('post')
         <div>
-            <label>set</label>
-            <input type="text" name="idset" placeholder="idset EX 1">
-            <label>kpi</label>
-            <input type="text" name="idcriteriakpi" placeholder="idcriteriakpi EX 1 ">
+            <label>Set </label>
+            <select name="idset">
+                @foreach($setkpis as $setkpi)
+                    <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
+                @endforeach
+            </select>
+            <label>kpi </label>
+            <select name="idcriteriakpi">
+                @foreach($criteriakpis as $kpi)
+                    <option value="{{ $kpi->crID }}">{{ $kpi->title }}</option>
+                @endforeach
+            </select>
+            
+            
         </div>
         <div>
             <input type="submit" value="save">

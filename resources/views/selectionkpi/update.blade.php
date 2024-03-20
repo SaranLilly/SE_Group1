@@ -11,12 +11,19 @@
     <form method="post" action="{{route('selectionkpi.update',['selectionkpi'=>$selectionkpi->idselection])}}">
         @csrf
         @method('put')
-        <div>
-            <input type="text" name="idset" placeholder="idset" value="{{$selectionkpi->idset}}">
-        </div>
-        <div>
-            <input type="text" name="idcriteriakpi" placeholder="idcriteriakpi" value="{{$selectionkpi->idcriteriakpi}}">
-        </div>
+
+        <select name="idset">
+            @foreach($setkpis as $setkpi)
+                <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
+            @endforeach
+        </select>
+        <label>kpi </label>
+        <select name="idcriteriakpi">
+            @foreach($criteriakpis as $kpi)
+                <option value="{{ $kpi->crID }}">{{ $kpi->title }}</option>
+            @endforeach
+        </select>
+       
         
         
         <div>
