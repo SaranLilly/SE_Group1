@@ -5,6 +5,8 @@ use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\RoundController;
 use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\SelectionkpiController;
+use App\Http\Controllers\ResultsController;
+
 
 
 Route::get('/', function () {
@@ -37,3 +39,10 @@ Route::post('/evaluation', [EvalutionController::class, 'store'])->name('evaluat
 Route::get('/evaluation/{evaluation}/edit', [EvalutionController::class, 'edit'])->name('evaluation.edit');
 Route::put('/evaluation/{evaluation}/update', [EvalutionController::class, 'update'])->name('evaluation.update');
 Route::delete('/evaluation/{evaluation}/delete', [EvalutionController::class, 'delete'])->name('evaluation.delete');
+
+Route::get('/result', [ResultsController::class, 'index'])->name('result.index');
+Route::get('/result/create', [ResultsController::class, 'create'])->name('result.create');
+Route::post('/result', [ResultsController::class, 'store'])->name('result.store');
+Route::get('/result/{result}/edit', [ResultsController::class, 'edit'])->name('result.edit');
+Route::put('/result/{result}/update', [ResultsController::class, 'update'])->name('result.update');
+Route::delete('/result/{result}/delete', [ResultsController::class, 'delete'])->name('result.delete');
