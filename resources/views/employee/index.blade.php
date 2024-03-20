@@ -36,6 +36,7 @@
                 <th>email</th>
                 <th>ตำแหน่ง</th>
                 <th>ทีม</th>
+                
                 <th>edit</th>
                 <th>delete</th>
             </tr>
@@ -55,6 +56,8 @@
                     <td>{{ $employee->email}}</td>
                     <td>{{ $employee->positionName}}</td>
                     <td>{{ $employee->teamName}}</td>
+                    
+                    
                     <td>
                         <a href="{{ route('employee.edit',['employee' => $employee->empID]) }}">Edit</a>
                     </td>

@@ -72,13 +72,30 @@
             <input type="text" name="email" placeholder="email">
         </div>
         <div>
-            <label>PositionID </label>
-            <input type="text" name="positionID" placeholder="positionID">
+            <label>Position </label>
+            <select name="positionID">
+                @foreach($positions as $position)
+                    <option value="{{ $position->positionID }}">{{ $position->positionName }}</option>
+                @endforeach
+            </select>
         </div>
         <div>
-            <label>SaleTeamID </label>
-            <input type="text" name="saleTeamID" placeholder="saleTeamID">
+            <label>SaleTeam </label>
+            <select name="saleTeamID">
+                @foreach($saleteams as $saleteam)
+                    <option value="{{ $saleteam->saleTeamID  }}">{{ $saleteam->teamName }}</option>
+                @endforeach
+            </select>
         </div>
+        {{-- <div>
+            <label>Position </label>
+            <input type="text" name="positionName" placeholder="positionName">
+        </div> --}}
+        
+        {{-- <div>
+            <label>SaleTeam </label>
+            <input type="text" name="teamName" placeholder="teamName">
+        </div> --}}
         <div>
             <input type="submit" value="Save New Employee">
         </div>

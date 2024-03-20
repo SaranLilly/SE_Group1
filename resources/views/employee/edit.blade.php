@@ -71,13 +71,29 @@
             <input type="text" name="email" placeholder="email" value="{{ $employee->email }}">
         </div>
         <div>
+            <label>Position </label>
+            <select name="positionID">
+                @foreach($positions as $position)
+                    <option value="{{ $position->positionID }}">{{ $position->positionName }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <label>SaleTeam </label>
+            <select name="saleTeamID">
+                @foreach($saleteams as $saleteam)
+                    <option value="{{ $saleteam->saleTeamID  }}">{{ $saleteam->teamName }}</option>
+                @endforeach
+            </select>
+        </div>
+        {{-- <div>
             <label>PositionID </label>
             <input type="text" name="positionID" placeholder="positionID" value="{{ $employee->positionID }}">
         </div>
         <div>
             <label>SaleTeamID </label>
             <input type="text" name="saleTeamID" placeholder="saleTeamID" value="{{ $employee->saleTeamID }}">
-        </div>
+        </div> --}}
         <div>
             <input type="submit" value="Update">
         </div>

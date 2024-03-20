@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class employee extends Model
+class Employee extends Model
 {
     use HasFactory;
     protected $table = 'employee';
@@ -22,7 +22,7 @@ class employee extends Model
         'idCard',
         'birth',
         'email',
-        'positionName',
+        'positionID',
         'saleTeamID',
     ];
     public $timestamps = false; // ปิดการใช้งานคอลัมน์ 'created_at' และ 'updated_at'
