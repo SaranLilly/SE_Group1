@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CriteriakpiController;
+use App\Http\Controllers\CriterionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\SaleteamController;
@@ -51,3 +52,10 @@ Route::post('/feedback', [FeedbackController::class, 'listofname'])->name('feedb
 Route::get('/feedback/{feedback}/edit', [FeedbackController::class, 'edit'])->name('feedback.edit');
 Route::put('/feedback/{feedback}/update', [FeedbackController::class, 'update'])->name('feedback.update');
 Route::delete('/feedback/{feedback}/destroy', [FeedbackController::class, 'destroy'])->name('feedback.destroy');
+
+Route::get('/criterion', [CriterionController::class, 'index'])->name('criterion.index');
+Route::get('/criterion/create', [CriterionController::class, 'create'])->name('criterion.create');
+Route::post('/criterion', [CriterionController::class, 'listofname'])->name('criterion.listofname');
+Route::get('/criterion/{criterion}/edit', [CriterionController::class, 'edit'])->name('criterion.edit');
+Route::put('/criterion/{criterion}/update', [CriterionController::class, 'update'])->name('criterion.update');
+Route::delete('/criterion/{criterion}/destroy', [CriterionController::class, 'destroy'])->name('criterion.destroy');
