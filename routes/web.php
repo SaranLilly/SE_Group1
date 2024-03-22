@@ -11,6 +11,7 @@ use App\Http\Controllers\RoundController;
 use App\Http\Controllers\SaleteamController;
 use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
+use App\Http\Controllers\TeamleaderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -87,3 +88,16 @@ Route::post('/criterion', [CriterionController::class, 'listofname'])->name('cri
 Route::get('/criterion/{criterion}/edit', [CriterionController::class, 'edit'])->name('criterion.edit');
 Route::put('/criterion/{criterion}/update', [CriterionController::class, 'update'])->name('criterion.update');
 Route::delete('/criterion/{criterion}/destroy', [CriterionController::class, 'destroy'])->name('criterion.destroy');
+
+Route::get('layout',function() {
+  return view('layout');
+})->name('layout');
+
+Route::get('test', function () {
+  return view('test');
+})->name('test');
+Route::get('/Setkpi/employee',[TeamleaderController::class,'employee'])->name('employee');
+Route::get('/Setkpi/employeeteam',[TeamleaderController::class,'employeeteam'])->name('employeeteam');
+Route::get('/Setkpi/evaluationform',[TeamleaderController::class,'evaluationform'])->name('evaluation.form');
+Route::get('/Setkpi/evaluationsubmitform',[TeamleaderController::class,'evaluationsubmitform'])->name('evaluation.submitform');
+Route::get('/Setkpi/resultkpi',[TeamleaderController::class,'resultkpi'])->name('result.kpi');
