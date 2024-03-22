@@ -3,6 +3,7 @@
 use App\Http\Controllers\CriteriakpiController;
 use App\Http\Controllers\CriterionController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmpteamheadController;
 use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ResultsController;
@@ -56,6 +57,8 @@ Route::post('/employee', [EmployeeController::class, 'listofname'])->name('emplo
 Route::get('/employee/{employee}/edit', [EmployeeController::class, 'edit'])->name('employee.edit');
 Route::put('/employee/{employee}/update', [EmployeeController::class, 'update'])->name('employee.update');
 Route::delete('/employee/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employee.destroy');
+
+Route::get('/empteamhead', [EmpteamheadController::class, 'index'])->name('empteamhead.index');
 
 Route::get('/saleteam', [SaleteamController::class, 'index'])->name('saleteam.index');
 Route::get('/saleteam/create', [SaleteamController::class, 'create'])->name('saleteam.create');
