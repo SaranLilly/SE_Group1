@@ -3,16 +3,14 @@
 use App\Http\Controllers\CriteriakpiController;
 use App\Http\Controllers\CriterionController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\FeedbackController;
-use App\Http\Controllers\SaleteamController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SetkpiController;
-use App\Http\Controllers\RoundController;
 use App\Http\Controllers\EvalutionController;
-use App\Http\Controllers\SelectionkpiController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ResultsController;
-
-
+use App\Http\Controllers\RoundController;
+use App\Http\Controllers\SaleteamController;
+use App\Http\Controllers\SelectionkpiController;
+use App\Http\Controllers\SetkpiController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');

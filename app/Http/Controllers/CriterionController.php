@@ -46,7 +46,8 @@ class CriterionController extends Controller
     {
         $criterion = Criterion::findOrFail($id);
         $criteriakpis = Criteriakpi::where('crID', $criterion->idcriteriakpi)->get();
-        return view('criterion.edit', ['criterion' => $criterion, 'criteriakpi' => $criteriakpis]);
+        //dd($criteriakpis);
+        return view('criterion.edit', ['criterion' => $criterion, 'criteriakpis' => $criteriakpis]);
     }
 
     public function update(Criterion $criterion, Request $request)

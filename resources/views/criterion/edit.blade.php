@@ -32,7 +32,12 @@
         </div> --}}
         <div class="form-label">
             <label>หัวข้อการประเมิน</label>
-            <input readonly type="text" name="title" placeholder="title" value="{{ $criterion->idcriteriakpi }}">
+            @foreach($criteriakpis as $criteriakpi)
+    {{-- {{ $criteriakpi->title }} --}}
+            <input readonly type="text" name="title" placeholder="title" value="{{ $criteriakpi->title }}">
+            @endforeach
+
+            {{-- <input readonly type="text" name="title" placeholder="title" value="{{ $criteriakpis->title }}"> --}}
         </div>
         
         {{-- <div class="form-label">
