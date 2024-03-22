@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\CriteriakpiController;
+use App\Http\Controllers\CriterionController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\SaleteamController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TeamleaderController;
 
 // Route::get('/', function () {
 //     return view('contact');
@@ -21,22 +25,3 @@ use App\Http\Controllers\TeamleaderController;
 Route::get('/', function () {
   return view('welcome');
 });
-
-Route::get('layout',function() {
-    return view('layout');
-})->name('layout');
-
-Route::get('test', function () {
-    return view('test');
-})->name('test');
-Route::get('employee',[TeamleaderController::class,'employee'])->name('employee');
-Route::get('employeeteam',[TeamleaderController::class,'employeeteam'])->name('employeeteam');
-Route::get('evaluationform',[TeamleaderController::class,'evaluationform'])->name('evaluationform');
-Route::get('evaluationsubmitform',[TeamleaderController::class,'evaluationsubmitform'])->name('evaluationsubmitform');
-Route::get('resultkpi',[TeamleaderController::class,'resultkpi'])->name('resultkpi');
-Route::get('/post','PostController@save');
-
-
-
-
-
