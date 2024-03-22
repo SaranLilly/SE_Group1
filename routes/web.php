@@ -11,7 +11,7 @@ use App\Http\Controllers\RoundController;
 use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\ResultsController;
-
+use App\Http\Controllers\OrderController;
 
 
 Route::get('/', function () {
@@ -86,3 +86,10 @@ Route::post('/criterion', [CriterionController::class, 'listofname'])->name('cri
 Route::get('/criterion/{criterion}/edit', [CriterionController::class, 'edit'])->name('criterion.edit');
 Route::put('/criterion/{criterion}/update', [CriterionController::class, 'update'])->name('criterion.update');
 Route::delete('/criterion/{criterion}/destroy', [CriterionController::class, 'destroy'])->name('criterion.destroy');
+
+Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
+Route::post('/orders', [OrderController::class, 'listoforders'])->name('orders.listoforders');
+Route::get('/orders/{orders}/edit', [OrderController::class, 'edit'])->name('orders.edit');
+Route::put('/orders/{orders}/update', [OrderController::class, 'update'])->name('orders.update');
+Route::delete('/orders/{orders}/destroy', [OrderController::class, 'destroy'])->name('orders.destroy');
