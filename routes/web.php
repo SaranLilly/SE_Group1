@@ -11,10 +11,6 @@ use App\Http\Controllers\RoundController;
 use App\Http\Controllers\SaleteamController;
 use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
-<<<<<<< HEAD
-=======
-use App\Http\Controllers\TeamleaderController;
->>>>>>> e18a0eb7e66a9c14dd3463c3a2bf4bb928a2263b
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
