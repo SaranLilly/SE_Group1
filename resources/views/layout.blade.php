@@ -48,7 +48,7 @@
                   <ul class="dropdown-menu dropdown-menu-light border-0" >
                     <li><a class="dropdown-item text-dark" href="{{ route('evaluation.form') }}">แบบประเมิน</a></li>
                    
-                    <li><a class="dropdown-item text-dark" href="/resultkpi">ผลการประเมิน</a></li>
+                    <li><a class="dropdown-item text-dark" href="{{ route('result.kpi') }}">ผลการประเมิน</a></li>
                   </ul>
                  
                 </li>
