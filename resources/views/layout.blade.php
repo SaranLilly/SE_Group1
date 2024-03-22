@@ -36,7 +36,7 @@
                     ข้อมูลองค์กร
                   </a>
                   <ul class="dropdown-menu dropdown-menu-light border-0">
-                    <li><a class="dropdown-item text-dark" href="{{ route('employee.index') }}">ข้อมูลพนักงาน</a></li>
+                    <li><a class="dropdown-item text-dark" href="{{ route('empteamhead.index') }}">ข้อมูลพนักงาน</a></li>
                     <li><a class="dropdown-item text-dark" href="#">ข้อมูลพนักงานในทีม</a></li>
                   </ul>
                 </li>

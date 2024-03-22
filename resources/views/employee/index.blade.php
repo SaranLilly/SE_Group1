@@ -14,8 +14,8 @@
             </div>
         @endif
     </div>
-    <div>
-        <table border="1" class="table table-striped">
+    <div class="container text-center">
+        <table border="1" class="table table-striped table-align-middle">
             <tr>
                 {{-- <th>ลำดับ</th> --}}
                 <th>คำนำหน้าชื่อ</th>

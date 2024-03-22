@@ -3,6 +3,8 @@
 use App\Http\Controllers\CriteriakpiController;
 use App\Http\Controllers\CriterionController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\empOverall;
+use App\Http\Controllers\empOverallController;
 use App\Http\Controllers\EmpteamheadController;
 use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\FeedbackController;
@@ -88,6 +90,8 @@ Route::post('/criterion', [CriterionController::class, 'listofname'])->name('cri
 Route::get('/criterion/{criterion}/edit', [CriterionController::class, 'edit'])->name('criterion.edit');
 Route::put('/criterion/{criterion}/update', [CriterionController::class, 'update'])->name('criterion.update');
 Route::delete('/criterion/{criterion}/destroy', [CriterionController::class, 'destroy'])->name('criterion.destroy');
+
+Route::get('/empOverall',[empOverallController::class,'index'])->name('empOverall.index');
 
 Route::get('layout',function() {
   return view('layout');
