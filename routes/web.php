@@ -3,17 +3,18 @@
 use App\Http\Controllers\CriteriakpiController;
 use App\Http\Controllers\CriterionController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmpteamheadController;
+use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ResultsController;
 use App\Http\Controllers\RoundController;
 use App\Http\Controllers\SaleteamController;
 use App\Http\Controllers\SelectionkpiController;
-use App\Http\Controllers\ResultsController;
-
-
+use App\Http\Controllers\SetkpiController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-  return view('welcome');
+    return view('welcome');
 });
 Route::get('/setkpi', [SetkpiController::class, 'index'])->name('setkpi.index');
 Route::get('/setkpi/create', [SetkpiController::class, 'create'])->name('setkpi.create');
@@ -36,7 +37,7 @@ Route::get('/selectionkpi/{selectionkpi}/edit', [SelectionkpiController::class, 
 Route::put('/selectionkpi/{selectionkpi}/update', [SelectionkpiController::class, 'update'])->name('selectionkpi.update');
 Route::delete('/selectionkpi/{selectionkpi}/delete', [SelectionkpiController::class, 'delete'])->name('selectionkpi.delete');
 
-Route::get('/evaluation', [EvalutionController::class, 'index'])->name('evaluationindex');
+Route::get('/evaluation', [EvalutionController::class, 'index'])->name('evaluation.index');
 Route::get('/evaluation/create', [EvalutionController::class, 'create'])->name('evaluation.create');
 Route::post('/evaluation', [EvalutionController::class, 'store'])->name('evaluation.store');
 Route::get('/evaluation/{evaluation}/edit', [EvalutionController::class, 'edit'])->name('evaluation.edit');
@@ -86,17 +87,3 @@ Route::post('/criterion', [CriterionController::class, 'listofname'])->name('cri
 Route::get('/criterion/{criterion}/edit', [CriterionController::class, 'edit'])->name('criterion.edit');
 Route::put('/criterion/{criterion}/update', [CriterionController::class, 'update'])->name('criterion.update');
 Route::delete('/criterion/{criterion}/destroy', [CriterionController::class, 'destroy'])->name('criterion.destroy');
-
-
-Route::get('layout',function() {
-  return view('layout');
-})->name('layout');
-
-Route::get('test', function () {
-  return view('test');
-})->name('test');
-Route::get('/Setkpi/employee',[TeamleaderController::class,'employee'])->name('employee');
-Route::get('/Setkpi/employeeteam',[TeamleaderController::class,'employeeteam'])->name('employeeteam');
-Route::get('/Setkpi/evaluationform',[TeamleaderController::class,'evaluationform'])->name('evaluation.form');
-Route::get('/Setkpi/evaluationsubmitform',[TeamleaderController::class,'evaluationsubmitform'])->name('evaluation.submitform');
-Route::get('/Setkpi/resultkpi',[TeamleaderController::class,'resultkpi'])->name('resultkpi');
