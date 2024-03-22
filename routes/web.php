@@ -8,6 +8,7 @@ use App\Http\Controllers\empOverallController;
 use App\Http\Controllers\EmpteamheadController;
 use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ResultsController;
 use App\Http\Controllers\RoundController;
 use App\Http\Controllers\SaleteamController;
@@ -91,17 +92,26 @@ Route::get('/criterion/{criterion}/edit', [CriterionController::class, 'edit'])-
 Route::put('/criterion/{criterion}/update', [CriterionController::class, 'update'])->name('criterion.update');
 Route::delete('/criterion/{criterion}/destroy', [CriterionController::class, 'destroy'])->name('criterion.destroy');
 
+
 Route::get('/empOverall',[empOverallController::class,'index'])->name('empOverall.index');
 
-Route::get('layout',function() {
-  return view('layout');
+
+Route::get('layout', function () {
+    return view('layout');
 })->name('layout');
 
 Route::get('test', function () {
-  return view('test');
+    return view('test');
 })->name('test');
-Route::get('/Setkpi/employee',[TeamleaderController::class,'employee'])->name('employee');
-Route::get('/Setkpi/employeeteam',[TeamleaderController::class,'employeeteam'])->name('employeeteam');
-Route::get('/Setkpi/evaluationform',[TeamleaderController::class,'evaluationform'])->name('evaluation.form');
-Route::get('/Setkpi/evaluationsubmitform',[TeamleaderController::class,'evaluationsubmitform'])->name('evaluation.submitform');
-Route::get('/Setkpi/resultkpi',[TeamleaderController::class,'resultkpi'])->name('result.kpi');
+Route::get('/Setkpi/employee', [TeamleaderController::class, 'employee'])->name('employee');
+Route::get('/Setkpi/employeeteam', [TeamleaderController::class, 'employeeteam'])->name('employeeteam');
+Route::get('/Setkpi/evaluationform', [TeamleaderController::class, 'evaluationform'])->name('evaluation.form');
+Route::get('/Setkpi/evaluationsubmitform', [TeamleaderController::class, 'evaluationsubmitform'])->name('evaluation.submitform');
+Route::get('/Setkpi/resultkpi', [TeamleaderController::class, 'resultkpi'])->name('result.kpi');
+
+Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
+Route::post('/orders', [OrderController::class, 'listoforders'])->name('orders.listoforders');
+Route::get('/orders/{orders}/edit', [OrderController::class, 'edit'])->name('orders.edit');
+Route::put('/orders/{orders}/update', [OrderController::class, 'update'])->name('orders.update');
+Route::delete('/orders/{orders}/destroy', [OrderController::class, 'destroy'])->name('orders.destroy');

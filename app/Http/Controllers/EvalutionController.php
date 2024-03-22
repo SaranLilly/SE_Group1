@@ -11,7 +11,7 @@ use App\Models\Setkpi;
 class EvalutionController extends Controller
 {
     public function index(){
-        $evaluations = DB::table('evaluation')
+        /* $evaluations = DB::table('evaluation')
         ->join('employee', 'employee.empID', '=', 'evaluation.idassess')     
         ->join('round', 'round.idround', '=', 'evaluation.idround') 
         ->join('setkpi', 'setkpi.idset', '=', 'evaluation.idset')          
@@ -19,9 +19,15 @@ class EvalutionController extends Controller
         $emp=DB::table('evaluation')
         ->join('employee', 'employee.empID', '=', 'evaluation.idassessed') 
         ->select('evaluation.*', 'employee.firstName') 
-        ->get();
-
-        return view('evaluation.index', ['evaluations' => $evaluations,'emp' => $emp]);
+        ->get(); */
+        $evaluations = DB::select('SELECT evaluation.idevaluation,e1.firstName as assess  ,e2.firstName as assessed, setkpi.titleset,round.date 
+        FROM evaluation 
+        LEFT JOIN (SELECT * FROM employee) as e1 ON e1.empID = evaluation.idassess 
+        LEFT JOIN (SELECT * FROM employee) as e2 ON e2.empID = evaluation.idassessed 
+        LEFT JOIN round ON round.idround = evaluation.idround 
+        LEFT JOIN setkpi ON setkpi.idset = evaluation.idset');
+        //dd($evaluations);
+        return view('evaluation.index', ['evaluations' => $evaluations]);
     }
     public function create(){
         $employees=DB::table('employee')->get();

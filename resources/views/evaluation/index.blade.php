@@ -7,7 +7,7 @@
     <table class="table" border="1">
         <thead>
           <tr>
-            <th>รหัส</th>
+            
             <th>ผู้ประเมิน</th>
             <th>ผู้ถูกประเมิน</th>
             <th>round</th>
@@ -21,10 +21,10 @@
 
             @foreach ($evaluations as $evaluation)
             <tr>
-            <td><label name="id">{{ $evaluation->idevaluation }}</label></td>
-            <td><label name="idassess ">{{ $evaluation->firstName }}</label></td>
             
-            <td><label name="idassessed ">{{ $evaluation->idassessed }}</label></td>
+            <td><label name="idassess ">{{ $evaluation->assess }}</label></td>
+            
+            <td><label name="idassessed ">{{ $evaluation->assessed }}</label></td>
 
             <td><label name="idround ">{{ $evaluation->date }}</label></td>
             <td><label name="idset ">{{ $evaluation->titleset }}</label></td>
