@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout')
+@section('title','แบบประเมิน')
+@section('content')
     <h1>Evaluation</h1>
     <button><a  href="/evaluation/create" >เพิ่ม</a></button>
     
     <table class="table" border="1">
         <thead>
           <tr>
-            <th>รหัส</th>
+            
             <th>ผู้ประเมิน</th>
             <th>ผู้ถูกประเมิน</th>
             <th>round</th>
@@ -29,10 +21,10 @@
 
             @foreach ($evaluations as $evaluation)
             <tr>
-            <td><label name="id">{{ $evaluation->idevaluation }}</label></td>
-            <td><label name="idassess ">{{ $evaluation->firstName }}</label></td>
             
-            <td><label name="idassessed ">{{ $evaluation->idassessed }}</label></td>
+            <td><label name="idassess ">{{ $evaluation->assess }}</label></td>
+            
+            <td><label name="idassessed ">{{ $evaluation->assessed }}</label></td>
 
             <td><label name="idround ">{{ $evaluation->date }}</label></td>
             <td><label name="idset ">{{ $evaluation->titleset }}</label></td>
@@ -50,5 +42,4 @@
                   
         </tbody>
       </table>
-</body>
-</html>
+@endsection
