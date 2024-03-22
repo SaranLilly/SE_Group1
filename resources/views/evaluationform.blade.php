@@ -61,10 +61,10 @@
         </div>
 
         <div class="">
-            <a href="/evaluationsubmitform" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านยอดขาย</a> <br><br>
-            <a href="/evaluationsubmitform" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านสินค้า</a> <br><br>
-            <a href="/evaluationsubmitform" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านความสัมพันธ์กับลูกค้า</a> <br><br>
-            <a href="/evaluationsubmitform" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านยอดใบเสนอราคา</a> <br><br>
+            <a href="{{ route('evaluation.submitform') }}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านยอดขาย</a> <br><br>
+            <a href="{{ route('evaluation.submitform') }}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านสินค้า</a> <br><br>
+            <a href="{{ route('evaluation.submitform') }}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านความสัมพันธ์กับลูกค้า</a> <br><br>
+            <a href="{{ route('evaluation.submitform') }}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="false">ด้านยอดใบเสนอราคา</a> <br><br>
         </div>
 
           

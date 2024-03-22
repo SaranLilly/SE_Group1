@@ -36,8 +36,8 @@
                     ข้อมูลองค์กร
                   </a>
                   <ul class="dropdown-menu dropdown-menu-light border-0">
-                    <li><a class="dropdown-item text-dark" href="/employee">ข้อมูลพนักงาน</a></li>
-                    <li><a class="dropdown-item text-dark" href="/employeeteam">ข้อมูลพนักงานในทีม</a></li>
+                    <li><a class="dropdown-item text-dark" href="{{ route('employee.index') }}">ข้อมูลพนักงาน</a></li>
+                    <li><a class="dropdown-item text-dark" href="#">ข้อมูลพนักงานในทีม</a></li>
                   </ul>
                 </li>
 
@@ -46,7 +46,7 @@
                     การประเมินพนักงาน
                   </a>
                   <ul class="dropdown-menu dropdown-menu-light border-0" >
-                    <li><a class="dropdown-item text-dark" href="/evaluationform">แบบประเมิน</a></li>
+                    <li><a class="dropdown-item text-dark" href="{{ route('evaluation.form') }}">แบบประเมิน</a></li>
                    
                     <li><a class="dropdown-item text-dark" href="/resultkpi">ผลการประเมิน</a></li>
                   </ul>
