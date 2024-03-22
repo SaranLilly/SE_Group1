@@ -34,7 +34,7 @@ Route::get('employeeteam',[TeamleaderController::class,'employeeteam'])->name('e
 Route::get('evaluationform',[TeamleaderController::class,'evaluationform'])->name('evaluationform');
 Route::get('evaluationsubmitform',[TeamleaderController::class,'evaluationsubmitform'])->name('evaluationsubmitform');
 Route::get('resultkpi',[TeamleaderController::class,'resultkpi'])->name('resultkpi');
-
+Route::get('/post','PostController@save');
 
 
 

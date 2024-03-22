@@ -22,7 +22,7 @@
             <div class="col-md-6">
                 <label for="evaluated" class="form-label">ผู้ถูกประเมิน:</label>
                 <select class="form-select" id="evaluated" name="evaluated">
-                    <option value="0"></option>
+                    <option value="">-- select name --</option>
                     <option value="1">Bank</option>
                     <option value="2">Kong</option>
                     <option value="3">Ton</option>
@@ -35,7 +35,7 @@
             <div class="col-md-6">
                 <label for="evaluator" class="form-label">ผู้ประเมิน:</label>
                 <select class="form-select" id="evaluator" name="evaluator">
-                    <option value="0"></option>
+                    <option value="">-- select name --</option>
                     <option value="1">Bank</option>
                     <option value="2">Kong</option>
                     <option value="3">Ton</option>

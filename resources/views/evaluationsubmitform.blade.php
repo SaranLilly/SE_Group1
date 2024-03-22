@@ -61,6 +61,7 @@
                         <button type="submit" class="btn btn-primary">บันทึก</button>
                         <button type="reset" class="btn btn-secondary">ยกเลิก</button>
                     </div>
+                    
                 </div>
             </section>
         </main>
