@@ -22,9 +22,9 @@
             @foreach ($evaluations as $evaluation)
             <tr>
             
-            <td><label name="idassess ">{{ $evaluation->assess }}</label></td>
+            <td><label name="idassess ">{{$evaluation->assessN}} {{$evaluation->assessF}}</label></td>
             
-            <td><label name="idassessed ">{{ $evaluation->assessed }}</label></td>
+            <td><label name="idassessed ">{{$evaluation->assessedN}} {{$evaluation->assessedF}}</label></td>
 
             <td><label name="idround ">{{ $evaluation->date }}</label></td>
             <td><label name="idset ">{{ $evaluation->titleset }}</label></td>
