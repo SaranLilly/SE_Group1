@@ -37,6 +37,39 @@
                 @endforeach
             </select>
             
+            <h2>ประเมินพนักงาน</h2>
+            <h3>เกณฑ์การประเมินประกอบการประเมินพนักงาน</h3>
+            <div>
+                <table border="1" class="table table-striped">
+                    <tr>
+                        {{-- <th>ลำดับ</th> --}}
+                        <th>หัวข้อการประเมิน</th>
+                        {{-- <th>max</th>
+                        <th>min</th> --}}
+                        <th>ช่วงการประเมิน(%)</th>
+                        <th>น้ำหนัก</th>
+                        <th>levelOfQuality</th>
+                        
+                    </tr>
+                    @foreach ($criterions as $criterion)
+                    
+                        <tr>
+                            {{-- <td>{{ $employee->empID}}</td> --}}
+                            <td>{{ $criterion->title}}</td>
+                            {{-- <td>{{ $criterion->max}}</td>
+                            <td>{{ $criterion->min}}</td> --}}
+                            <td>{{ $criterion->min }} - {{ $criterion->max }}</td> <!-- เพิ่มช่วงเกณฑ์ -->
+                            <td>{{ $criterion->score}}</td>
+                            <td>{{ $criterion->levelOfQuality}}</td>
+                           
+                            
+                            
+                            
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+
         </div>
         <div>
             <input type="submit" value="save">

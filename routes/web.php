@@ -3,7 +3,6 @@
 use App\Http\Controllers\CriteriakpiController;
 use App\Http\Controllers\CriterionController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\empOverall;
 use App\Http\Controllers\empOverallController;
 use App\Http\Controllers\EmpteamheadController;
 use App\Http\Controllers\EvalutionController;
@@ -92,9 +91,7 @@ Route::get('/criterion/{criterion}/edit', [CriterionController::class, 'edit'])-
 Route::put('/criterion/{criterion}/update', [CriterionController::class, 'update'])->name('criterion.update');
 Route::delete('/criterion/{criterion}/destroy', [CriterionController::class, 'destroy'])->name('criterion.destroy');
 
-
-Route::get('/empOverall',[empOverallController::class,'index'])->name('empOverall.index');
-
+Route::get('/empOverall', [empOverallController::class, 'index'])->name('empOverall.index');
 
 Route::get('layout', function () {
     return view('layout');
@@ -106,6 +103,7 @@ Route::get('test', function () {
 Route::get('/Setkpi/employee', [TeamleaderController::class, 'employee'])->name('employee');
 Route::get('/Setkpi/employeeteam', [TeamleaderController::class, 'employeeteam'])->name('employeeteam');
 Route::get('/Setkpi/evaluationform', [TeamleaderController::class, 'evaluationform'])->name('evaluation.form');
+Route::get('/evaluation/create', [EvalutionController::class, 'create'])->name('evaluation.create');
 Route::get('/Setkpi/evaluationsubmitform', [TeamleaderController::class, 'evaluationsubmitform'])->name('evaluation.submitform');
 Route::get('/Setkpi/resultkpi', [TeamleaderController::class, 'resultkpi'])->name('result.kpi');
 
