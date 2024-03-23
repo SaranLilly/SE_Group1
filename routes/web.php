@@ -47,6 +47,9 @@ Route::get('/evaluation/{evaluation}/edit', [EvalutionController::class, 'edit']
 Route::put('/evaluation/{evaluation}/update', [EvalutionController::class, 'update'])->name('evaluation.update');
 Route::delete('/evaluation/{evaluation}/delete', [EvalutionController::class, 'delete'])->name('evaluation.delete');
 
+Route::get('/dropdown', [EvalutionController::class, 'showDropdown'])->name('show_dropdown');
+Route::post('/process-selection', [EvalutionController::class, 'processSelection'])->name('process_selection');
+
 Route::get('/result', [ResultsController::class, 'index'])->name('result.index');
 Route::get('/result/create', [ResultsController::class, 'create'])->name('result.create');
 Route::post('/result', [ResultsController::class, 'store'])->name('result.store');
