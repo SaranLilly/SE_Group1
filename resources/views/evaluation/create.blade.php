@@ -15,13 +15,13 @@
             <label>ผู้ประเมิน </label>
             <select name="idassess">
                 @foreach($employees as $employee)
-                    <option value="{{ $employee->empID }}">{{ $employee->firstName }}</option>
+                    <option value="{{ $employee->empID }}">{{ $employee->firstName }} {{ $employee->lastName }}</option>
                 @endforeach
             </select>
             <label>ผู้ถูกประเมิน </label>
             <select name="idassessed">
-                @foreach($employees as $employee)
-                    <option value="{{ $employee->empID }}">{{ $employee->firstName }}</option>
+                @foreach($employees2 as $employee)
+                    <option value="{{ $employee->empID }}">{{ $employee->firstName }} {{ $employee->lastName }}</option>
                 @endforeach
             </select>
             <label>round </label>

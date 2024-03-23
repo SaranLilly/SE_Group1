@@ -32,7 +32,8 @@ class EvalutionController extends Controller
     }
     public function create()
     {
-        $employees = DB::table('employee')->get();
+        $employees = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 1 OR employee.positionID = 2');
+        $employees2 = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 2 OR employee.positionID = 3');
         $rounds = Round::all();
         $setkpis = Setkpi::all();
         $criterions = DB::table('criterion')
@@ -41,7 +42,7 @@ class EvalutionController extends Controller
             ->get();
 
         return view('evaluation.create', ['employees' => $employees, 'rounds' => $rounds, 'setkpis' => $setkpis,
-            'criterions' => $criterions]);
+            'criterions' => $criterions , 'employees2' =>$employees2]);
     }
     public function store(Request $request)
     {
