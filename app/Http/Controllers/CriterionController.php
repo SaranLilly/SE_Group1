@@ -27,6 +27,7 @@ class CriterionController extends Controller
         $data = $request->validate([
 
             'idcriteriakpi' => 'required|max:20',
+
             'max' => 'required|max:20',
             'min' => 'required|max:20',
             'score' => 'required|max:20',

@@ -83,5 +83,22 @@ class EvalutionController extends Controller
         $evaluation->delete();
         return redirect(route('evaluation.index'))->with('success', 'evaluation delete successfully');
     }
-    //
+    public function showDropdown()
+    {
+        $setkpis = Setkpi::all(); // หรือดึงข้อมูลของคุณจากที่ไหนก็ได้ที่คุณเก็บมัน
+        //return view('example', compact('data'));
+        //return view('evaluation.create', ['setkpis' => $setkpis], compact('setkpis'));
+        return view('setkpi.index', ['setkpis' => $setkpis], compact('setkpis'));
+
+    }
+
+    public function processSelection(Request $request)
+    {
+        $setkpis = $request->input('dropdown');
+        // ประมวลผลรายการที่เลือกตามที่ต้องการ
+        $setkpis = Setkpi::all(); // หรือดึงข้อมูลของคุณจากที่ไหนก็ได้ที่คุณเก็บมัน
+        //return view('example', compact('data'));
+        //return view('evaluation.create', ['setkpis' => $setkpis], compact('setkpis'));
+        return view('setkpi.index', ['setkpis' => $setkpis], compact('setkpis'));
+    }
 }
