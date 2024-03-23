@@ -14,6 +14,7 @@ use App\Http\Controllers\SaleteamController;
 use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\TeamleaderController;
+use App\Http\Controllers\OrderdetailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -116,3 +117,10 @@ Route::post('/orders', [OrderController::class, 'listoforders'])->name('orders.l
 Route::get('/orders/{orders}/edit', [OrderController::class, 'edit'])->name('orders.edit');
 Route::put('/orders/{orders}/update', [OrderController::class, 'update'])->name('orders.update');
 Route::delete('/orders/{orders}/destroy', [OrderController::class, 'destroy'])->name('orders.destroy');
+
+Route::get('/orderdetail', [OrderdetailController::class, 'index'])->name('orderdetail.index');
+Route::get('/orderdetail/create', [OrderdetailController::class, 'create'])->name('orderdetail.create');
+Route::post('/orderdetail', [OrderdetailController::class, 'listoforderdetail'])->name('orderdetail.listoforderdetail');
+Route::get('/orderdetail/{orderdetail}/edit', [OrderdetailController::class, 'edit'])->name('orderdetail.edit');
+Route::put('/orderdetail/{orderdetail}/update', [OrderdetailController::class, 'update'])->name('orderdetail.update');
+Route::delete('/orderdetail/{orderdetail}/destroy', [OrderdetailController::class, 'destroy'])->name('orderdetail.destroy');
