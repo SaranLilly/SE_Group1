@@ -15,6 +15,7 @@ use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\TeamleaderController;
 use App\Http\Controllers\OrderdetailController;
+use App\Http\Controllers\quotationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -121,3 +122,10 @@ Route::post('/orderdetail', [OrderdetailController::class, 'listoforderdetail'])
 Route::get('/orderdetail/{orderdetail}/edit', [OrderdetailController::class, 'edit'])->name('orderdetail.edit');
 Route::put('/orderdetail/{orderdetail}/update', [OrderdetailController::class, 'update'])->name('orderdetail.update');
 Route::delete('/orderdetail/{orderdetail}/destroy', [OrderdetailController::class, 'destroy'])->name('orderdetail.destroy');
+
+Route::get('/quotation', [quotationController::class, 'index'])->name('quotation.index');
+Route::get('/quotation/create', [quotationController::class, 'create'])->name('quotation.create');
+Route::post('/quotation', [quotationController::class, 'listofquotation'])->name('quotation.listofquotation');
+Route::get('/quotation/{quotation}/edit', [quotationController::class, 'edit'])->name('quotation.edit');
+Route::put('/quotation/{quotation}/update', [quotationController::class, 'update'])->name('quotation.update');
+Route::delete('/quotation/{quotation}/destroy', [quotationController::class, 'destroy'])->name('quotation.destroy');
