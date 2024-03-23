@@ -49,7 +49,7 @@ class OrderController extends Controller
     public function update(Order $orders, Request $request)
     {
         //dd($request);
-         $data = $request->validate([
+        $data = $request->validate([
             'empID' => 'required|Integer',
             'customerID' => 'required|Integer',
             'statusid' => 'required|Integer',
