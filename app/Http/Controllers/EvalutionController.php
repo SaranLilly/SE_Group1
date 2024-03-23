@@ -21,18 +21,19 @@ class EvalutionController extends Controller
         ->join('employee', 'employee.empID', '=', 'evaluation.idassessed')
         ->select('evaluation.*', 'employee.firstName')
         ->get(); */
-        $evaluations = DB::select('SELECT evaluation.idevaluation,e1.firstName as assess  ,e2.firstName as assessed, setkpi.titleset,round.date
+        $evaluations = DB::select('SELECT evaluation.idevaluation,e1.firstName as assessN ,e1.lastName as assessF   ,e2.firstName as assessedN  ,e2.lastName assessedF  , setkpi.titleset,round.date
         FROM evaluation
         LEFT JOIN (SELECT * FROM employee) as e1 ON e1.empID = evaluation.idassess
         LEFT JOIN (SELECT * FROM employee) as e2 ON e2.empID = evaluation.idassessed
         LEFT JOIN round ON round.idround = evaluation.idround
-        LEFT JOIN setkpi ON setkpi.idset = evaluation.idset');
+        LEFT JOIN setkpi ON setkpi.idset = evaluation.idset;');
         //dd($evaluations);
         return view('evaluation.index', ['evaluations' => $evaluations]);
     }
     public function create()
     {
-        $employees = DB::table('employee')->get();
+        $employees = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 1 OR employee.positionID = 2');
+        $employees2 = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 2 OR employee.positionID = 3');
         $rounds = Round::all();
         $setkpis = Setkpi::all();
         $criterions = DB::table('criterion')
@@ -41,7 +42,7 @@ class EvalutionController extends Controller
             ->get();
 
         return view('evaluation.create', ['employees' => $employees, 'rounds' => $rounds, 'setkpis' => $setkpis,
-            'criterions' => $criterions]);
+            'criterions' => $criterions , 'employees2' =>$employees2]);
     }
     public function store(Request $request)
     {
@@ -59,10 +60,11 @@ class EvalutionController extends Controller
     }
     public function edit(Evalution $evaluation)
     {
-        $employees = DB::table('employee')->get();
+        $employees = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 1 OR employee.positionID = 2');
+        $employees2 = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 2 OR employee.positionID = 3');
         $rounds = Round::all();
         $setkpis = Setkpi::all();
-        return view('evaluation.update', ['evaluation' => $evaluation, 'employees' => $employees, 'rounds' => $rounds, 'setkpis' => $setkpis]);
+        return view('evaluation.update', ['evaluation' => $evaluation, 'employees' => $employees, 'rounds' => $rounds, 'setkpis' => $setkpis , 'employees2' =>$employees2]);
     }
     public function update(Evalution $evaluation, Request $request)
     {
