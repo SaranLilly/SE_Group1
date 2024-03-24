@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Criteriakpi;
 use App\Models\Evalution;
 use App\Models\Round;
+use App\Models\Selectionkpi;
 use App\Models\Setkpi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -36,13 +38,22 @@ class EvalutionController extends Controller
         $employees2 = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 2 OR employee.positionID = 3');
         $rounds = Round::all();
         $setkpis = Setkpi::all();
+        // $selectionkpis = Selectionkpi::all();
+        $selectionkpis = DB::table('selectionkpi')
+            ->leftJoin('setkpi', 'setkpi.idset', '=', 'selectionkpi.idset')
+            ->leftJoin('criteriakpi', 'criteriakpi.crID', '=', 'selectionkpi.idcriteriakpi')
+            ->select('setkpi.titleset', 'criteriakpi.title')
+            ->get();
+
+        $criteriakpis = Criteriakpi::all();
         $criterions = DB::table('criterion')
             ->leftJoin('criteriakpi', 'criteriakpi.crID', '=', 'criterion.idcriteriakpi')
             ->select('criterion.*', 'criteriakpi.title')
             ->get();
 
         return view('evaluation.create', ['employees' => $employees, 'rounds' => $rounds, 'setkpis' => $setkpis,
-            'criterions' => $criterions, 'employees2' => $employees2]);
+            'criterions' => $criterions, 'employees2' => $employees2, 'selectionkpis' => $selectionkpis
+            , 'criteriakpis' => $criteriakpis]);
     }
     public function store(Request $request)
     {
@@ -94,13 +105,22 @@ class EvalutionController extends Controller
 
     }
 
+    // public function processSelection(Request $request)
+    // {
+    //     $setkpis = $request->input('dropdown');
+    //     // ประมวลผลรายการที่เลือกตามที่ต้องการ
+    //     $setkpis = Setkpi::all(); // หรือดึงข้อมูลของคุณจากที่ไหนก็ได้ที่คุณเก็บมัน
+    //     //return view('example', compact('data'));
+    //     //return view('evaluation.create', ['setkpis' => $setkpis], compact('setkpis'));
+    //     return view('setkpi.index', ['setkpis' => $setkpis], compact('setkpis'));
+    // }
+    // ใน controller หรือสคริปต์ที่ใช้งานกับฐานข้อมูล
     public function processSelection(Request $request)
     {
-        $setkpis = $request->input('dropdown');
-        // ประมวลผลรายการที่เลือกตามที่ต้องการ
-        $setkpis = Setkpi::all(); // หรือดึงข้อมูลของคุณจากที่ไหนก็ได้ที่คุณเก็บมัน
-        //return view('example', compact('data'));
-        //return view('evaluation.create', ['setkpis' => $setkpis], compact('setkpis'));
-        return view('setkpi.index', ['setkpis' => $setkpis], compact('setkpis'));
+        $selectedValue = $request->input('selectedValue');
+        // ดึงข้อมูลจากฐานข้อมูลตามค่าที่เลือก
+        $selectionkpis = Selectionkpi::where('selectionkpis', $selectedValue)->get();
+        return response()->json($selectionkpis);
     }
+
 }

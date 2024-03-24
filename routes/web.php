@@ -145,9 +145,17 @@ Route::get('/quotationdetail/{quotationdetail}/edit', [quotationDetailController
 Route::put('/quotationdetail/{quotationdetail}/update', [quotationDetailController::class, 'update'])->name('quotationdetail.update');
 Route::delete('/quotationdetail/{quotationdetail}/destroy', [quotationDetailController::class, 'destroy'])->name('quotationdetail.destroy');
 
-Route::get('/test', function () {
-    return view("test/index");
-});
+// Route::get('/test', function () {
+//     return view("test/index");
+// });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

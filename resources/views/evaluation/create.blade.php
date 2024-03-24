@@ -159,6 +159,39 @@
         <div>
             <input type="submit" value="save">
         </div>
+        <div>
+          ดึงหัวข้อการปะเมิน
+          <table class="table" border="1">
+        
+            <thead>
+              <tr>
+                {{-- <th>รหัส</th> --}}
+                <th>set</th>
+                <th>kpi</th>
+                {{-- <th>แก้ไข</th>
+                <th>ลบ</th> --}}
+    
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($selectionkpis as $selectionkpi)
+                <tr>
+                {{-- <td><label name="id">{{ $selectionkpi->idselection }}</label></td> --}}
+                <td><label name="set">{{ $selectionkpi->titleset}}</label></td>
+                <td><label name="kpi">{{ $selectionkpi->title}}</label></td>
+                {{-- <td><a href="{{ route('selectionkpi.edit',['selectionkpi' => $selectionkpi->idselection]) }}">แก้ไข</a></td> --}}
+              {{-- <td>
+                  <form method="POST" action="{{ route('selectionkpi.delete',['selectionkpi'=> $selectionkpi->idselection]) }}">
+                      @csrf
+                      @method('delete')
+                      <input type="submit" value="ลบ">
+                  </form>
+              </td> --}}
+              </tr>
+                @endforeach            
+            </tbody>
+          </table>
+        </div>
     </form>
 </body>
 </html>
