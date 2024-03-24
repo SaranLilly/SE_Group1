@@ -17,11 +17,15 @@ use App\Http\Controllers\SaleteamController;
 use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\TeamleaderController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+/* Route::get('/', function () {
+return view('welcome');
+}); */
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('auth.login');
+})->name('auth.login');
 Route::get('/setkpi', [SetkpiController::class, 'index'])->name('setkpi.index');
 Route::get('/setkpi/create', [SetkpiController::class, 'create'])->name('setkpi.create');
 Route::post('/setkpi', [SetkpiController::class, 'store'])->name('setkpi.store');
@@ -144,3 +148,7 @@ Route::delete('/quotationdetail/{quotationdetail}/destroy', [quotationDetailCont
 Route::get('/test', function () {
     return view("test/index");
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
