@@ -18,10 +18,14 @@ use App\Http\Controllers\OrderdetailController;
 use App\Http\Controllers\quotationController;
 use App\Http\Controllers\quotationDetailController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
+Route::get('/', function () {
+    return view('auth.login');
+})->name('auth.login');
 Route::get('/setkpi', [SetkpiController::class, 'index'])->name('setkpi.index');
 Route::get('/setkpi/create', [SetkpiController::class, 'create'])->name('setkpi.create');
 Route::post('/setkpi', [SetkpiController::class, 'store'])->name('setkpi.store');
@@ -140,3 +144,7 @@ Route::post('/quotationdetail', [quotationDetailController::class, 'listofquotat
 Route::get('/quotationdetail/{quotationdetail}/edit', [quotationDetailController::class, 'edit'])->name('quotationdetail.edit');
 Route::put('/quotationdetail/{quotationdetail}/update', [quotationDetailController::class, 'update'])->name('quotationdetail.update');
 Route::delete('/quotationdetail/{quotationdetail}/destroy', [quotationDetailController::class, 'destroy'])->name('quotationdetail.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
