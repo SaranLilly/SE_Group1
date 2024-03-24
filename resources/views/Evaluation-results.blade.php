@@ -1,7 +1,8 @@
 @extends('layout')
+@section('title','ผลการประเมินไตรมาสที่....')
 @section('content')
 <div class="container">
-    <h2>ผลการประเมินพนักงาน</h2>
+    <h2>ผลการประเมินไตรมาสที่1</h2>
     <table class="table table-bordered table-striped text text-center">
       <thead>
         <tr>

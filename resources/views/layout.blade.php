@@ -23,7 +23,7 @@
               <a class="navbar-brand text-dark" href="#">
                 <img src="https://i.pinimg.com/564x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" alt="Logo" width="30px" height="30px" class="d-inline-block align-text-top">
                 Somsak jaidee 
-                &nbsp;<br>Team leader Team A
+                &nbsp;<br>พนักงานฝ่ายขาย
               </a>
               
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -33,22 +33,12 @@
               <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    ข้อมูลองค์กร
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-light border-0">
-                    <li><a class="dropdown-item text-dark" href="{{ route('empteamhead.index') }}">ข้อมูลพนักงาน</a></li>
-                    <li><a class="dropdown-item text-dark" href="#">ข้อมูลพนักงานในทีม</a></li>
-                  </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     การประเมินพนักงาน
                   </a>
                   <ul class="dropdown-menu dropdown-menu-light border-0" >
-                    <li><a class="dropdown-item text-dark" href="{{ route('evaluation.create') }}">แบบประเมิน</a></li>
-                   
-                    <li><a class="dropdown-item text-dark" href="{{ route('result.kpi') }}">ผลการประเมิน</a></li>
+                    <li><a class="dropdown-item text-dark" href="/resultkpiyear">ผลการประเมินประจำไตรมาส</a></li>
+                    <li><a class="dropdown-item text-dark" href="/resultkpi">ผลการประเมินพนักงาน</a></li>
+                  </ul>
                   </ul>
                  
                 </li>
