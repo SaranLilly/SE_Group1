@@ -28,9 +28,20 @@
             <select name="idround">
                 @foreach($rounds as $round)
                     <option value="{{ $round->idround }}">{{ $round->date }}</option>
-                @endforeach
+               
+                    @endforeach
             </select>
-            
+        
+            {{-- <label>selectionkpi </label>
+            <select name="idselection">
+              @foreach ($selectionkpis as $selectionkpi)
+                
+                    <option value="{{ $selectionkpi->idselection }}">{{ $selectionkpi->title }}</option>
+                @endforeach
+            </select> --}}
+
+
+
             {{-- <label>set </label>
             <select name="idset">
                 @foreach($setkpis as $setkpi)
@@ -47,7 +58,7 @@
                         <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
                     @endforeach
                 </select>
-                <button type="submit">Submit</button>
+                <button type="submit" >Submit</button>
             </form>
             
 

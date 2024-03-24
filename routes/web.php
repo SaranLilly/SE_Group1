@@ -8,15 +8,15 @@ use App\Http\Controllers\EmpteamheadController;
 use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderdetailController;
+use App\Http\Controllers\quotationController;
+use App\Http\Controllers\quotationDetailController;
 use App\Http\Controllers\ResultsController;
 use App\Http\Controllers\RoundController;
 use App\Http\Controllers\SaleteamController;
 use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\TeamleaderController;
-use App\Http\Controllers\OrderdetailController;
-use App\Http\Controllers\quotationController;
-use App\Http\Controllers\quotationDetailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -140,3 +140,7 @@ Route::post('/quotationdetail', [quotationDetailController::class, 'listofquotat
 Route::get('/quotationdetail/{quotationdetail}/edit', [quotationDetailController::class, 'edit'])->name('quotationdetail.edit');
 Route::put('/quotationdetail/{quotationdetail}/update', [quotationDetailController::class, 'update'])->name('quotationdetail.update');
 Route::delete('/quotationdetail/{quotationdetail}/destroy', [quotationDetailController::class, 'destroy'])->name('quotationdetail.destroy');
+
+Route::get('/test', function () {
+    return view("test/index");
+});

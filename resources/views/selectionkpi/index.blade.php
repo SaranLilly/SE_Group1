@@ -16,7 +16,7 @@
         
         <thead>
           <tr>
-            <th>รหัส</th>
+            {{-- <th>รหัส</th> --}}
             <th>set</th>
             <th>kpi</th>
             <th>แก้ไข</th>
@@ -27,7 +27,7 @@
         <tbody>
             @foreach ($selectionkpis as $selectionkpi)
             <tr>
-            <td><label name="id">{{ $selectionkpi->idselection }}</label></td>
+            {{-- <td><label name="id">{{ $selectionkpi->idselection }}</label></td> --}}
             <td><label name="set">{{ $selectionkpi->titleset}}</label></td>
             <td><label name="kpi">{{ $selectionkpi->title}}</label></td>
             <td><a href="{{ route('selectionkpi.edit',['selectionkpi' => $selectionkpi->idselection]) }}">แก้ไข</a></td>

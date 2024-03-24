@@ -42,7 +42,7 @@ class EvalutionController extends Controller
             ->get();
 
         return view('evaluation.create', ['employees' => $employees, 'rounds' => $rounds, 'setkpis' => $setkpis,
-            'criterions' => $criterions , 'employees2' =>$employees2]);
+            'criterions' => $criterions, 'employees2' => $employees2]);
     }
     public function store(Request $request)
     {
@@ -64,7 +64,7 @@ class EvalutionController extends Controller
         $employees2 = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 2 OR employee.positionID = 3');
         $rounds = Round::all();
         $setkpis = Setkpi::all();
-        return view('evaluation.update', ['evaluation' => $evaluation, 'employees' => $employees, 'rounds' => $rounds, 'setkpis' => $setkpis , 'employees2' =>$employees2]);
+        return view('evaluation.update', ['evaluation' => $evaluation, 'employees' => $employees, 'rounds' => $rounds, 'setkpis' => $setkpis, 'employees2' => $employees2]);
     }
     public function update(Evalution $evaluation, Request $request)
     {
