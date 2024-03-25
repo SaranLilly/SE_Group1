@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,12 @@
 </head>
 <body>
     
+=======
+@extends('layout')
+@section('title','หน้าเกณฑ์การประเมิน')
+@section('content')
+    <h1>criterion</h1>
+>>>>>>> efeb3471655f6abd3d33f55413bf95375a1c918b
 
     {{-- <div>
         <a class="btn btn-primary" href="{{ route('criterion.create') }}">New criterion</a>
@@ -63,6 +70,5 @@
             @endforeach
         </table>
     </div>
-</body>
-</html>
+@endsection
     
