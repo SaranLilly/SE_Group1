@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout')
+@section('title','การประเมิน')
+@section('content')
     <h1>create</h1>
     <form method="post" action="{{route('evaluation.store')}}">
         @csrf
@@ -40,8 +34,6 @@
                 @endforeach
             </select> --}}
 
-
-
             {{-- <label>set </label>
             <select name="idset">
                 @foreach($setkpis as $setkpi)
@@ -58,45 +50,9 @@
                         <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
                     @endforeach
                 </select>
-                <button type="submit" >Submit</button>
+                {{-- <button type="submit" >Submit</button> --}}
             </form>
-            
-
-
-
-            <h2>ประเมินพนักงาน</h2>
-            <h3>เกณฑ์การประเมินประกอบการประเมินพนักงาน</h3>
-            <div>
-                <table border="1" class="table table-striped">
-                    <tr>
-                        {{-- <th>ลำดับ</th> --}}
-                        <th>หัวข้อการประเมิน</th>
-                        {{-- <th>max</th>
-                        <th>min</th> --}}
-                        <th>ช่วงการประเมิน(%)</th>
-                        <th>น้ำหนัก</th>
-                        <th>levelOfQuality</th>
-                        
-                    </tr>
-                    @foreach ($criterions as $criterion)
-                    
-                        <tr>
-                            {{-- <td>{{ $employee->empID}}</td> --}}
-                            <td>{{ $criterion->title}}</td>
-                            {{-- <td>{{ $criterion->max}}</td>
-                            <td>{{ $criterion->min}}</td> --}}
-                            <td>{{ $criterion->min }} - {{ $criterion->max }}</td> <!-- เพิ่มช่วงเกณฑ์ -->
-                            <td>{{ $criterion->score}}</td>
-                            <td>{{ $criterion->levelOfQuality}}</td>
-                           
-                            
-                            
-                            
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
-
+          
         </div>
         
         {{-- <div class="mx-0 mx-sm-auto">
@@ -160,25 +116,25 @@
             <input type="submit" value="save">
         </div>
         <div>
-          ดึงหัวข้อการปะเมิน
-          <table class="table" border="1">
+          {{-- ดึงหัวข้อการปะเมิน --}}
+          {{-- <table class="table" border="1"> --}}
         
-            <thead>
-              <tr>
+            {{-- <thead>
+              <tr> --}}
                 {{-- <th>รหัส</th> --}}
-                <th>set</th>
-                <th>kpi</th>
+                {{-- <th>set</th>
+                <th>kpi</th> --}}
                 {{-- <th>แก้ไข</th>
                 <th>ลบ</th> --}}
     
-              </tr>
+              {{-- </tr>
             </thead>
-            <tbody>
-                @foreach ($selectionkpis as $selectionkpi)
-                <tr>
+            <tbody> --}}
+                {{-- @foreach ($selectionkpis as $selectionkpi)
+                <tr> --}}
                 {{-- <td><label name="id">{{ $selectionkpi->idselection }}</label></td> --}}
-                <td><label name="set">{{ $selectionkpi->titleset}}</label></td>
-                <td><label name="kpi">{{ $selectionkpi->title}}</label></td>
+                {{-- <td><label name="set">{{ $selectionkpi->titleset}}</label></td>
+                <td><label name="kpi">{{ $selectionkpi->title}}</label></td> --}}
                 {{-- <td><a href="{{ route('selectionkpi.edit',['selectionkpi' => $selectionkpi->idselection]) }}">แก้ไข</a></td> --}}
               {{-- <td>
                   <form method="POST" action="{{ route('selectionkpi.delete',['selectionkpi'=> $selectionkpi->idselection]) }}">
@@ -187,11 +143,10 @@
                       <input type="submit" value="ลบ">
                   </form>
               </td> --}}
-              </tr>
+              {{-- </tr>
                 @endforeach            
             </tbody>
-          </table>
+          </table> --}}
         </div>
     </form>
-</body>
-</html>
+@endsection

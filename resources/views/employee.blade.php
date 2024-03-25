@@ -1,3 +1,4 @@
+{{-- อันเก่า --}}
 @extends('layout')
 @section('title', 'ข้อมูลพนักงาน')
 @section('content')
