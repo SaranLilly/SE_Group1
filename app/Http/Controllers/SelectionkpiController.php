@@ -36,6 +36,7 @@ class SelectionkpiController extends Controller
         return redirect(route('selectionkpi.index'));
     }
     public function edit(Selectionkpi $selectionkpi){
+        //dd($selectionkpi);
         $setkpis= Setkpi::all();
         $criteriakpis=DB::table('criteriakpi')->get();
         return view('selectionkpi.update', ['selectionkpi' => $selectionkpi ,'setkpis' => $setkpis, 'criteriakpis' => $criteriakpis]);

@@ -17,6 +17,7 @@ use App\Http\Controllers\SaleteamController;
 use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\TeamleaderController;
+use App\Http\Controllers\productvarityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -145,6 +146,13 @@ Route::post('/quotationdetail', [quotationDetailController::class, 'listofquotat
 Route::get('/quotationdetail/{quotationdetail}/edit', [quotationDetailController::class, 'edit'])->name('quotationdetail.edit');
 Route::put('/quotationdetail/{quotationdetail}/update', [quotationDetailController::class, 'update'])->name('quotationdetail.update');
 Route::delete('/quotationdetail/{quotationdetail}/destroy', [quotationDetailController::class, 'destroy'])->name('quotationdetail.destroy');
+
+Route::get('/productvarity', [productvarityController::class, 'index'])->name('productvarity.index');
+Route::get('/productvarity/create', [productvarityController::class, 'create'])->name('productvarity.create');
+Route::post('/productvarity', [productvarityController::class, 'listofproductvarity'])->name('productvarity.listofproductvarity');
+Route::get('/productvarity/{productvarity}/edit', [productvarityController::class, 'edit'])->name('productvarity.edit');
+Route::put('/productvarity/{productvarity}/update', [productvarityController::class, 'update'])->name('productvarity.update');
+Route::delete('/productvarity/{productvarity}/destroy', [productvarityController::class, 'destroy'])->name('productvarity.destroy');
 
 // Route::get('/test', function () {
 //     return view("test/index");

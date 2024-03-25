@@ -1,8 +1,11 @@
 @extends('layout')
+
 @section('title','แก้ไขเกณฑ์การประเมิน')
+
+
 @section('content')
     <div class="container">
-    <h1>Edit criterion</h1>
+    <h1>แก้ไข</h1>
     <div>
         @if($errors->any())
         <ul>
@@ -56,7 +59,7 @@
         </div>
        
         <div class="col-12">
-            <input type="submit" value="Update">
+            <input type="submit" value="แก้ไข">
         </div>
     </form>
 </div>

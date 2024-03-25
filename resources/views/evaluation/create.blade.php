@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','การประเมิน')
 @section('content')
-    <h1>create</h1>
+    <h1>เพิ่ม</h1>
     <form method="post" action="{{route('evaluation.store')}}">
         @csrf
         @method('post')
@@ -18,41 +18,21 @@
                     <option value="{{ $employee->empID }}">{{ $employee->firstName }} {{ $employee->lastName }}</option>
                 @endforeach
             </select>
-            <label>round </label>
+            <label>รอบการประเมิน </label>
             <select name="idround">
                 @foreach($rounds as $round)
                     <option value="{{ $round->idround }}">{{ $round->date }}</option>
                
                     @endforeach
             </select>
-        
-            {{-- <label>selectionkpi </label>
-            <select name="idselection">
-              @foreach ($selectionkpis as $selectionkpi)
-                
-                    <option value="{{ $selectionkpi->idselection }}">{{ $selectionkpi->title }}</option>
-                @endforeach
-            </select> --}}
-
-            {{-- <label>set </label>
-            <select name="idset">
-                @foreach($setkpis as $setkpi)
-                    <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
-                @endforeach
-            </select> --}}
-
             <br>
             <label>เลือกชุดการประเมิน</label>
-            <form action="{{ route('process_selection') }}" method="POST">
-                @csrf
-                <select name="dropdown">
+                <select name="idset">
                     @foreach($setkpis as $setkpi)
                         <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
                     @endforeach
                 </select>
                 {{-- <button type="submit" >Submit</button> --}}
-            </form>
-          
         </div>
         
         {{-- <div class="mx-0 mx-sm-auto">
@@ -112,8 +92,8 @@
               </div>
             </div>
           </div> --}}
-        <div>
-            <input type="submit" value="save">
+        <div><br>
+            <input type="submit" value="บันทึก">
         </div>
         <div>
           {{-- ดึงหัวข้อการปะเมิน --}}

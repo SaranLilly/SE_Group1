@@ -60,7 +60,7 @@
                         <form method="POST" action="{{ route('employee.destroy',['employee'=> $employee->empID]) }}">
                             @csrf
                             @method('delete')
-                            <input type="submit" value="Delete" class="btn btn-danger">
+                            <input type="submit" value="ลบ" class="btn btn-danger">
                         </form>
                     </td>
                 </tr>

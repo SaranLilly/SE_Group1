@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>create</h1>
+@extends('layout')
+@section('content')
+    <h1>เพิ่ม</h1>
     <form method="post" action="{{route('round.store')}}">
         @csrf
         @method('post')
         <div>
-            <label>date</label>
+            <label>วันที่</label>
             <input type="date" name="date" placeholder="date">
         </div>
-        <div>
-            <input type="submit" value="save">
+        <div><br>
+            <input type="submit" value="บันทึก">
         </div>
     </form>
-</body>
-</html>
+@endsection

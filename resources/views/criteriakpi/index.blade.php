@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout')
+@section('content')
     <h1>criteriakpi</h1>
 
     <div>
-        <a href="{{ route('criteriakpi.create') }}">New Criteriakpi</a>
+        <button><a class="btn btn-primary" href="{{ route('criteriakpi.create') }}">เพิ่ม</a></button>
     </div>
     
     <div>
@@ -21,11 +14,12 @@
         @endif
     </div>
     <div>
-        <table border="1">
+        <table border="1" class="table table-striped table-align-middle">
             <tr>
                 {{-- <th>ลำดับ</th> --}}
                 <th>ชื่อหัวข้อการประเมิน</th>
-                
+                <th>แก้ไข</th>
+                <th>ลบ</th>
             </tr>
             @foreach ($criteriakpis as $criteriakpi)
             
@@ -34,19 +28,17 @@
                     <td>{{ $criteriakpi->title}}</td>
                     
                     <td>
-                        <a href="{{ route('criteriakpi.edit',['criteriakpi' => $criteriakpi->crID]) }}">Edit</a>
+                        <a class="btn btn-success" href="{{ route('criteriakpi.edit',['criteriakpi' => $criteriakpi->crID]) }}">แก้ไข</a>
                     </td>
                     <td>
                         <form method="POST" action="{{ route('criteriakpi.destroy',['criteriakpi'=> $criteriakpi->crID]) }}">
                             @csrf
                             @method('delete')
-                            <input type="submit" value="Delete">
+                            <input type="submit" value="ลบ" class="btn btn-danger">
                         </form>
                     </td>
                 </tr>
             @endforeach
         </table>
     </div>
-</body>
-</html>
-    
+    @endsection

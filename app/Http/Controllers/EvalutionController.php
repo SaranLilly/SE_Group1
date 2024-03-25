@@ -75,6 +75,7 @@ class EvalutionController extends Controller
     }
     public function edit(Evalution $evaluation)
     {
+        //dd($evaluation);
         $employees = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 1 OR employee.positionID = 2');
         $employees2 = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 2 OR employee.positionID = 3');
         $rounds = Round::all();

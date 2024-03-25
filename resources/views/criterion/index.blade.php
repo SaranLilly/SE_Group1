@@ -25,8 +25,8 @@
                 <th>ช่วงการประเมิน(%)</th>
                 <th>score</th>
                 <th>levelOfQuality</th>
-                <th>edit</th>
-                <th>delete</th>
+                <th>แก้ไข</th>
+                <th>ลบ</th>
             </tr>
             @foreach ($criterions as $criterion)
                 <tr>
@@ -42,14 +42,14 @@
 
                     <td>
                         <a class="btn btn-success"
-                            href="{{ route('criterion.edit', ['criterion' => $criterion->idcriterion]) }}">Edit</a>
+                            href="{{ route('criterion.edit', ['criterion' => $criterion->idcriterion]) }}">แก้ไข</a>
                     </td>
                     <td>
                         <form method="POST"
                             action="{{ route('criterion.destroy', ['criterion' => $criterion->idcriterion]) }}">
                             @csrf
                             @method('delete')
-                            <input type="submit" value="Delete" class="btn btn-danger">
+                            <input type="submit" value="ลบ" class="btn btn-danger">
                         </form>
                     </td>
                 </tr>
