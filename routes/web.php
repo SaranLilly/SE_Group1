@@ -49,6 +49,7 @@ Route::delete('/selectionkpi/{selectionkpi}/delete', [SelectionkpiController::cl
 
 Route::get('/evaluation', [EvalutionController::class, 'index'])->name('evaluation.index');
 Route::get('/evaluation/create', [EvalutionController::class, 'create'])->name('evaluation.create');
+// Route::get('/evaluation/create/evaluationform', [EvalutionController::class, 'evaform'])->name('evaform.from');
 Route::post('/evaluation', [EvalutionController::class, 'store'])->name('evaluation.store');
 Route::get('/evaluation/{evaluation}/edit', [EvalutionController::class, 'edit'])->name('evaluation.edit');
 Route::put('/evaluation/{evaluation}/update', [EvalutionController::class, 'update'])->name('evaluation.update');

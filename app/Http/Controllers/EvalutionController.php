@@ -32,6 +32,10 @@ class EvalutionController extends Controller
         //dd($evaluations);
         return view('evaluation.index', ['evaluations' => $evaluations]);
     }
+    public function evaform()
+    {
+        echo ("riri");
+    }
     public function create()
     {
         $employees = DB::select('SELECT * FROM `employee` WHERE employee.positionID = 1 OR employee.positionID = 2');
