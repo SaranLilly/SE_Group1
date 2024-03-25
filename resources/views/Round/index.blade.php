@@ -16,7 +16,7 @@
         
         <thead>
           <tr>
-            <th scope="roundID ">รหัส</th>
+           {{--  <th scope="roundID ">รหัส</th> --}}
             <th scope="date">date</th>
             <th >แก้ไข</th>
             <th >ลบ</th>
@@ -26,7 +26,7 @@
         <tbody>
             @foreach ($rounds as $round)
             <tr>
-            <td><label name="id">{{ $round->idround }}</label></td>
+           {{--  <td><label name="id">{{ $round->idround }}</label></td> --}}
             <td><label name="date">{{ $round->date}}</label></td>
             <td><a href="{{ route('round.edit',['round' => $round->idround]) }}">แก้ไข</a></td>
             <td>

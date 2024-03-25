@@ -12,16 +12,25 @@
         @csrf
         @method('put')
 
+        <label>set </label>
         <select name="idset">
-            @foreach($setkpis as $setkpi)
-                <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
-            @endforeach
+            <?php foreach($setkpis as $setkpi){
+                echo"<option value= $setkpi->idset ";
+                if($setkpi->idset == $selectionkpi->idset){
+                    echo 'selected="selected"';
+                }
+                echo"> $setkpi->titleset</option>";
+            }?>
         </select>
         <label>kpi </label>
         <select name="idcriteriakpi">
-            @foreach($criteriakpis as $kpi)
-                <option value="{{ $kpi->crID }}">{{ $kpi->title }}</option>
-            @endforeach
+            <?php foreach($criteriakpis as $kpi){
+                echo"<option value= $kpi->crID ";
+                if($kpi->crID == $selectionkpi->idcriteriakpi){
+                    echo 'selected="selected"';
+                }
+                echo"> $kpi->title</option>";
+            }?>
         </select>
        
         
