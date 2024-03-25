@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout')
+@section('content')
     <h1>Result</h1>
-    <button><a  href="/result/create" >เพิ่ม</a></button>
+   {{--  <button><a  href="/result/create" >เพิ่ม</a></button> --}}
     
-    <table class="table" border="1">
+    <table class="table table-striped table-align-middle" border="1">
         
         <thead>
           <tr>
@@ -48,5 +39,4 @@
             @endforeach            
         </tbody>
       </table>
-</body>
-</html>
+@endsection
