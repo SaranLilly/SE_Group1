@@ -1,5 +1,5 @@
-body {
-  background-color: pink; /* เปลี่ยนสีพื้นหลังของหน้าเว็บ */
+.body {
+  background-color: blueviolet; /* เปลี่ยนสีพื้นหลังของหน้าเว็บ */
 }
 
 .navbar {

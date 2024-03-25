@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','หน้าเกณฑ์การประเมิน')
 @section('content')
-    <h1>criterion</h1>
+    <h1>เกณฑ์การประเมิน</h1>
 
     {{-- <div>
         <a class="btn btn-primary" href="{{ route('criterion.create') }}">New criterion</a>
