@@ -25,34 +25,14 @@
                
                     @endforeach
             </select>
-        
-            {{-- <label>selectionkpi </label>
-            <select name="idselection">
-              @foreach ($selectionkpis as $selectionkpi)
-                
-                    <option value="{{ $selectionkpi->idselection }}">{{ $selectionkpi->title }}</option>
-                @endforeach
-            </select> --}}
-
-            {{-- <label>set </label>
-            <select name="idset">
-                @foreach($setkpis as $setkpi)
-                    <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
-                @endforeach
-            </select> --}}
-
             <br>
             <label>เลือกชุดการประเมิน</label>
-            <form action="{{ route('process_selection') }}" method="POST">
-                @csrf
-                <select name="dropdown">
+                <select name="idset">
                     @foreach($setkpis as $setkpi)
                         <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
                     @endforeach
                 </select>
                 {{-- <button type="submit" >Submit</button> --}}
-            </form>
-          
         </div>
         
         {{-- <div class="mx-0 mx-sm-auto">
