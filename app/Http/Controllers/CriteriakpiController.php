@@ -27,6 +27,7 @@ class CriteriakpiController extends Controller
         $newCriteriakpi = Criteriakpi::create($data);
 
         return redirect(route('criteriakpi.index'));
+        
     }
     public function edit(Criteriakpi $criteriakpi)
     {

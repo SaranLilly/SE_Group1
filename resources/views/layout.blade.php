@@ -36,8 +36,7 @@
                     การประเมินพนักงาน
                   </a>
                   <ul class="dropdown-menu dropdown-menu-light border-0" >
-                    <li><a class="dropdown-item text-dark" href="/resultkpiyear">ผลการประเมินประจำไตรมาส</a></li>
-                    <li><a class="dropdown-item text-dark" href="/resultkpi">ผลการประเมินพนักงาน</a></li>
+                    <li><a class="dropdown-item text-dark" href="/resultkpiyear">ผลการประเมินของพนักงาน</a></li>
                   </ul>
                   </ul>
                  
