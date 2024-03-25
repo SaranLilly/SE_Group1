@@ -16,7 +16,7 @@ class ResultsController extends Controller
         LEFT JOIN evaluation  ON results.idevalution = evaluation.idevaluation
         LEFT JOIN (SELECT * FROM employee) as e1 ON e1.empID = evaluation.idassess
         LEFT JOIN (SELECT * FROM employee) as e2 ON e2.empID = evaluation.idassessed  
-        INNER JOIN criteriakpi ON results.idcriterakipi = criteriakpi.crID');
+        INNER JOIN criteriakpi ON results.idcriterakipi = criteriakpi.crID ORDER BY `assessedN` ASC');
 
         return view('result.index', ['results' => $results]);
     }
