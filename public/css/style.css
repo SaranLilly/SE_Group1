@@ -1,0 +1,72 @@
+body {
+    background-color: white; /* เปลี่ยนสีพื้นหลังของหน้าเว็บ */
+}
+
+.navbar {
+    background-color: #83afbc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.offcanvas-header {
+    background-color: #d3f3f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* border-radius: 8px; */
+}
+
+.offcanvas-body {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* border-radius: 8px; */
+}
+
+
+
+
+.table {
+    background-color: white;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+table {
+    border-collapse: collapse;
+}
+table .head {
+    border-bottom: solid 1px #EAEDED;
+}
+table .head th {
+    padding: 16px 24 px;
+}
+table .row {
+    border-bottom: solid 1px #EAEDED;
+}
+table .row td {
+    padding: 16px 24px;
+}
+
+
+  
+
+
+.navbar .nav-link {
+    color: #333; /* เปลี่ยนสีของข้อความใน tabs */
+    font-weight: bold; /* เพิ่ม font-weight ให้ข้อความใน tabs เป็นตัวหนา */
+}
+
+.navbar .nav-link.active {
+    background-color: gray; /* เปลี่ยนสีพื้นหลังของ tab ที่เลือก */
+    color: #fff; /* เปลี่ยนสีของข้อความใน tab ที่เลือก */
+}
+
+.nav-pills {
+    border-radius: 10px;
+}
+
+.nav-pills .nav-link {
+    color: shy;
+    font-weight: bold;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #000000;
+}

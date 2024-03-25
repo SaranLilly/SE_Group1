@@ -16,7 +16,7 @@
     </div>
     <div class="container text-center">
         <table border="1" class="table table-striped table-align-middle">
-            <tr>
+            <tr class="head">
                 {{-- <th>ลำดับ</th> --}}
                 <th>คำนำหน้าชื่อ</th>
                 <th>ชื่อ</th>
@@ -36,7 +36,7 @@
             </tr>
             @foreach ($employees as $employee)
             
-                <tr>
+                <tr class="row">
                     {{-- <td>{{ $employee->empID}}</td> --}}
                     <td>{{ $employee->prefix}}</td>
                     <td>{{ $employee->firstName}}</td>
