@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>create</h1>
+    <h1>เพิ่ม</h1>
     <form method="post" action="{{route('result.store')}}">
         @csrf
         @method('post')
         <div>
             <div>
-            <label>kpi </label>
+            <label>หัวข้อ </label>
             <select name="idcriterakipi">
                 @foreach($criteriakpis as $criteriakpi)
                     <option value="{{ $criteriakpi->crID }}">{{ $criteriakpi->title }}</option>
@@ -21,7 +21,7 @@
             </select>
             </div>
             <div>
-            <label>evaluationid </label>
+            <label> </label>
             <select name="idevalution">
                 @foreach($evaluations as $evaluation)
                     <option value="{{ $evaluation->idevaluation  }}">{{ $evaluation->idevaluation }}</option>

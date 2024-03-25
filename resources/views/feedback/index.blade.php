@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout')
+@section('content')
     <h1>feedback</h1>
     
     {{-- <div>
@@ -21,14 +14,13 @@
         @endif
     </div>
     <div>
-        <table border="1">
+        <table border="1" class="table table-striped table-align-middle">
             <tr>
                 <th>เลขออเดอร์</th>
                 <th>หัวข้อการประเมิน</th>
                 <th>คะแนน</th>
                 <th>ผู้ดูแลออเดอร์</th>
                 <th>ชื่อพนักงาน</th>
-                <th>นามสกุลพนักงาน</th>
                 <th>ทีม</th>
                 {{-- <th>edit</th>
                 <th>delete</th> --}}
@@ -39,8 +31,7 @@
         <td>{{ $feedback->title }}</td>
         <td>{{ $feedback->score }}</td>
         <td>{{ $feedback->userName }}</td>
-        <td>{{ $feedback->firstName }}</td>
-        <td>{{ $feedback->lastName }}</td>
+        <td>{{ $feedback->firstName }} {{ $feedback->lastName }}</td>
         <td>{{ $feedback->teamName }}</td>
         {{-- <td>
             <a href="{{ route('feedback.edit', ['feedback' => $feedback->feedbackId]) }}">Edit</a>
@@ -57,6 +48,4 @@
 
         </table>
     </div>
-</body>
-</html>
-    
+@endsection

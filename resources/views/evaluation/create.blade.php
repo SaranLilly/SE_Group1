@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','การประเมิน')
 @section('content')
-    <h1>create</h1>
+    <h1>เพิ่ม</h1>
     <form method="post" action="{{route('evaluation.store')}}">
         @csrf
         @method('post')
@@ -18,7 +18,7 @@
                     <option value="{{ $employee->empID }}">{{ $employee->firstName }} {{ $employee->lastName }}</option>
                 @endforeach
             </select>
-            <label>round </label>
+            <label>รอบการประเมิน </label>
             <select name="idround">
                 @foreach($rounds as $round)
                     <option value="{{ $round->idround }}">{{ $round->date }}</option>
@@ -92,8 +92,8 @@
               </div>
             </div>
           </div> --}}
-        <div>
-            <input type="submit" value="save">
+        <div><br>
+            <input type="submit" value="บันทึก">
         </div>
         <div>
           {{-- ดึงหัวข้อการปะเมิน --}}
