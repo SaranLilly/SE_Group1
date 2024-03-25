@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <h1>criterion</h1>
+    
 
     {{-- <div>
         <a class="btn btn-primary" href="{{ route('criterion.create') }}">New criterion</a>
@@ -28,8 +28,9 @@
             <tr>
                 {{-- <th>ลำดับ</th> --}}
                 <th>หัวข้อการประเมิน</th>
-                <th>max</th>
-                <th>min</th>
+                {{-- <th>max</th>
+                <th>min</th> --}}
+                <th>ช่วงการประเมิน(%)</th>
                 <th>score</th>
                 <th>levelOfQuality</th>
                 <th>edit</th>
@@ -40,8 +41,9 @@
                 <tr>
                     {{-- <td>{{ $employee->empID}}</td> --}}
                     <td>{{ $criterion->title}}</td>
-                    <td>{{ $criterion->max}}</td>
-                    <td>{{ $criterion->min}}</td>
+                    {{-- <td>{{ $criterion->max}}</td>
+                    <td>{{ $criterion->min}}</td> --}}
+                    <td>{{ $criterion->max }} - {{ $criterion->min }}</td> <!-- เพิ่มช่วงเกณฑ์ -->
                     <td>{{ $criterion->score}}</td>
                     <td>{{ $criterion->levelOfQuality}}</td>
                    
