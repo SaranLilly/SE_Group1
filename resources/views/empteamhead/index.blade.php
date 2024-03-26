@@ -10,9 +10,10 @@
             </div>
         @endif
     </div>
-    <div>
-        <table border="1" class="table table-striped">
-            <tr>
+    
+    <div class="table table-responsive " style="width: 100%">
+        <table style="width: 100%">
+            <tr class="head">
                 {{-- <th>คำนำหน้าชื่อ</th> --}}
                 {{--    <th>เบอร์โทรศัพท์</th> --}}
                 <th>รหัสพนักงาน</th>
@@ -25,7 +26,7 @@
                 <th></th>
             </tr>
             @foreach ($employees as $employee)
-                <tr>
+                <tr class="column">
                     {{-- <td>{{ $employee->prefix}}</td> --}}
                     {{-- <td>{{ $employee->phoneNumber}}</td> --}}
                     <td>{{ $employee->userName }}</td>

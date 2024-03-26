@@ -1,22 +1,24 @@
 @extends('layout')
 @section('title','ข้อมูลพนักงาน')
 @section('content')
-    <h1>Employee</h1>
+    <h1 style="font-family: Arial">ข้อมูลพนักงาน</h1>
 
     <div>
         <a class="btn btn-primary" href="{{ route('employee.create') }}">New Employee</a>
     </div>
     
     <div>
-        @if(session()->has('success'))
+        @if(session()->has('success')) 
             <div>
                 {{ session('success') }}
             </div>
         @endif
     </div>
-    <div class="container text-center">
-        <table border="1" class="table table-striped table-align-middle">
-            <tr class="head">
+
+    <div class="table table-responsive" style="width: 100%">
+        {{-- <table border="1" class="table table-align-middle"> --}}
+        <table style="width: 100%">
+            <tr class="head" >
                 {{-- <th>ลำดับ</th> --}}
                 <th>คำนำหน้าชื่อ</th>
                 <th>ชื่อ</th>
@@ -30,13 +32,12 @@
                 <th>email</th>
                 <th>ตำแหน่ง</th>
                 <th>ทีม</th>
-                
                 <th>edit</th>
                 <th>delete</th>
             </tr>
             @foreach ($employees as $employee)
             
-                <tr class="row">
+                <tr class="column">
                     {{-- <td>{{ $employee->empID}}</td> --}}
                     <td>{{ $employee->prefix}}</td>
                     <td>{{ $employee->firstName}}</td>

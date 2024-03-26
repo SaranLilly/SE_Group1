@@ -15,9 +15,10 @@
             </div>
         @endif
     </div>
-    <div>
-        <table border="1" class="table table-striped">
-            <tr>
+
+    <div class="table table-responsive" style="width: 100%">
+        <table style="width: 100%">
+            <tr class="head">
                 {{-- <th>ลำดับ</th> --}}
                 <th>หัวข้อการประเมิน</th>
                 {{-- <th>max</th>
@@ -29,7 +30,7 @@
                 <th>ลบ</th>
             </tr>
             @foreach ($criterions as $criterion)
-                <tr>
+                <tr class="column">
                     {{-- <td>{{ $employee->empID}}</td> --}}
                     <td>{{ $criterion->title }}</td>
                     {{-- <td>{{ $criterion->max}}</td>

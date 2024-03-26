@@ -1,11 +1,13 @@
 @extends('layout');
 @section('title','ผลการประเมินไตรมาสที่....')
 @section('content')
-<div class="container">
-    <h2>ผลการประเมินไตรมาสที่1</h2>
-    <table class="table table-bordered table-striped text text-center">
+
+
+<h2>ผลการประเมินไตรมาสที่1</h2>
+<div class="table table-table-responsive" style="width: 100%">
+    <table style="width: 100%">
       <thead>
-        <tr>
+        <tr class="head">
           <th>ลำดับที่</th>
           <th>หัวข้อการประเมิน</th>
           <th>คะแนนเต็ม</th>
@@ -16,7 +18,7 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody class="column">
         <tr>
           <td>1</td>
           <td>ยอดขาย</td>
