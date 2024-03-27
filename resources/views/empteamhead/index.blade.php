@@ -2,7 +2,7 @@
 @section('title', 'ข้อมูลพนักงาน')
 @section('content')
     <h1 style="font-weight: 800">ข้อมูลพนักงาน</h1>
-
+    
     <div>
         @if (session()->has('success'))
             <div>
@@ -36,9 +36,9 @@
                     <td>{{ $employee->email }}</td>
                     <td>{{ $employee->positionName }}</td>
                     <td>{{ $employee->teamName }}</td>
-                    <td><a href="{{ route('empOverall.index') }}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">ผลการทำงาน</a></td>
+                    <td><a href="{{ route('empOverall.index', ['empID' => $employee->empID]) }}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">ผลการทำงาน</a></td>
                 </tr>
             @endforeach
         </table>
     </div>
-@endsection
+@endsection 

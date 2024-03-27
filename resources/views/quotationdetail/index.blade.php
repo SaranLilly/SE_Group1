@@ -19,7 +19,8 @@
 
                 <th>พนักงาน</th>
                 <th>ลูกค้า</th>
-                <th>จำนวน</th>
+                <th>สินค้า</th>
+                <th>สี</th>
                 <th>ราคา</th>
                 
                 <th>edit</th>
@@ -32,7 +33,8 @@
     
                     <td>{{ $quotationdetail->firstName}}</td>
                     <td>{{ $quotationdetail->firstname}}</td>
-                    <td>{{ $quotationdetail->amount}}</td>
+                    <td>{{ $quotationdetail->productname}}</td>
+                    <td>{{ $quotationdetail->color}}</td>
                     <td>{{ $quotationdetail->price}}</td>
                     
                     

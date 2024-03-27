@@ -18,8 +18,11 @@
             <tr>
 
                 <th>พนักงาน</th>
-                <th>จำนวน</th>
+                <th>ลูกค้า</th>
+                <th>สินค้า</th>
+                <th>สี</th>
                 <th>ราคา</th>
+                <th>สถานะ</th>
                 
                 <th>edit</th>
                 <th>delete</th>
@@ -30,8 +33,11 @@
                 <tr>
     
                     <td>{{ $orderdetail->firstName}}</td>
-                    <td>{{ $orderdetail->amount}}</td>
+                    <td>{{ $orderdetail->firstname}}</td>
+                    <td>{{ $orderdetail->productname}}</td>
+                    <td>{{ $orderdetail->color}}</td>
                     <td>{{ $orderdetail->price}}</td>
+                    <td>{{ $orderdetail->status}}</td>
                     
                     
                     <td>
