@@ -2,7 +2,7 @@
 @section('title', 'ข้อมูลพนักงาน')
 @section('content')
     <h1 style="font-weight: 800">ข้อมูลพนักงาน</h1>
-
+    
     <div>
         @if (session()->has('success'))
             <div>
