@@ -55,7 +55,6 @@
     <div class="edit">
         <h1 style="font-weight: 800">เพิ่ม</h1>
         <form method="post" action="{{ route('evaluation.store') }}">
-          {{-- <form method="POST" action="{{ route('result.create') }}"> --}}
             @csrf
             @method('post')
             <div>
@@ -85,6 +84,7 @@
                         <option value="{{ $setkpi->idset }}">{{ $setkpi->titleset }}</option>
                     @endforeach
                 </select>
+               
                 {{-- <button type="submit" >Submit</button> --}}
             </div>
 
@@ -146,7 +146,11 @@
           </div>
         </div> --}}
             <div><br>
-                <input type="submit" value="บันทึก" >
+                <input type="submit" value="บันทึก">
+                
+            </div>
+            <div>
+              <input type="submit" value="ประเมิน">
             </div>
             <div>
                 {{-- ดึงหัวข้อการปะเมิน --}}
@@ -180,6 +184,7 @@
               @endforeach            
           </tbody>
         </table> --}}
+       
             </div>
         </form>
 

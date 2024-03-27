@@ -9,6 +9,7 @@ use App\Http\Controllers\EvalutionController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderdetailController;
+use App\Http\Controllers\productvarityController;
 use App\Http\Controllers\quotationController;
 use App\Http\Controllers\quotationDetailController;
 use App\Http\Controllers\ResultsController;
@@ -17,7 +18,6 @@ use App\Http\Controllers\SaleteamController;
 use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\TeamleaderController;
-use App\Http\Controllers\productvarityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,7 +50,8 @@ Route::delete('/selectionkpi/{selectionkpi}/delete', [SelectionkpiController::cl
 
 Route::get('/evaluation', [EvalutionController::class, 'index'])->name('evaluation.index');
 Route::get('/evaluation/create', [EvalutionController::class, 'create'])->name('evaluation.create');
-// Route::get('/evaluation/create/evaluationform', [EvalutionController::class, 'evaform'])->name('evaform.from');
+
+Route::get('/evaluation/create/evaluationform', [EvalutionController::class, 'evaform'])->name('evaform.from');
 Route::post('/evaluation', [EvalutionController::class, 'store'])->name('evaluation.store');
 Route::get('/evaluation/{evaluation}/edit', [EvalutionController::class, 'edit'])->name('evaluation.edit');
 Route::put('/evaluation/{evaluation}/update', [EvalutionController::class, 'update'])->name('evaluation.update');
@@ -60,8 +61,10 @@ Route::get('/dropdown', [EvalutionController::class, 'showDropdown'])->name('sho
 Route::post('/process-selection', [EvalutionController::class, 'processSelection'])->name('process_selection');
 
 Route::get('/result', [ResultsController::class, 'index'])->name('result.index');
-Route::get('/result/create', [ResultsController::class, 'create'])->name('result.create');
+// Route::get('/result/create', [ResultsController::class, 'create'])->name('result.create');
+Route::post('/result/create', [ResultsController::class, 'create'])->name('result.create');
 Route::post('/result', [ResultsController::class, 'store'])->name('result.store');
+// Route::post('/result', [ResultsController::class, 'store'])->name('result.store');
 Route::get('/result/{result}/edit', [ResultsController::class, 'edit'])->name('result.edit');
 Route::put('/result/{result}/update', [ResultsController::class, 'update'])->name('result.update');
 Route::delete('/result/{result}/delete', [ResultsController::class, 'delete'])->name('result.delete');
