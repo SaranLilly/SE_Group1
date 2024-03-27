@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','ข้อมูลพนักงาน')
 @section('content')
-    <h1 style="font-family: Arial">ข้อมูลพนักงาน</h1>
+    <h1 style="font-weight: 800">ข้อมูลพนักงาน</h1>
 
     <div>
         <a class="btn btn-primary" href="{{ route('employee.create') }}">New Employee</a>

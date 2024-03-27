@@ -2,7 +2,7 @@
 @extends('layout')
 @section('title', 'ข้อมูลพนักงาน')
 @section('content')
-    <h2 class="text pb-4">ข้อมูลพนักงาน</h2>
+    <h2 style="font-weight: 800">ข้อมูลพนักงาน</h2>
     <table class="table">
         <thead>
             <tr>

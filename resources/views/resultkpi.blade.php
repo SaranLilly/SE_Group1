@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h2>ผลการประเมินไตรมาสที่1</h2>
+<h2 style="font-weight: 800">ผลการประเมินไตรมาสที่1</h2>
 <div class="table table-table-responsive" style="width: 100%">
     <table style="width: 100%">
       <thead>

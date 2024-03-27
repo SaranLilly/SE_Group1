@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'หน้าเกณฑ์การประเมิน')
 @section('content')
-    <h1>เกณฑ์การประเมิน</h1>
+    <h1 style="font-weight: 800">เกณฑ์การประเมิน</h1>
 
 
     {{-- <div>

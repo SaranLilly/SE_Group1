@@ -6,32 +6,14 @@ body {
     width: 100%;
 }
 h1 {
-   
-}
-.navbar {
-    background-color: #83afbc;
-    /* background-color: #6f9afd; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.offcanvas-header {
-    background-color: #D6EAF8;
-    /* background-color: #d3f3f5; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* border-radius: 8px; */
-}
-
-.offcanvas-body {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* border-radius: 8px; */
+   font-family: "Poppins",sans-serif;
 }
 
 
 
 
 .table {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     text-align: center;
     border-radius: 8px;
     /* overflow: hidden; */
@@ -42,6 +24,7 @@ h1 {
         0px 8px 16px -6px rgba(24,39,75,0.08);
 }
 table {
+    
     border-collapse: collapse;
     width: 100%;
 }
@@ -70,6 +53,28 @@ table .column:last-child {
     border: none;
 }
   
+
+
+
+
+.navbar {
+    background-color: #83afbc;
+    /* background-color: #6f9afd; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.offcanvas-header {
+    background-color: #D6EAF8;
+    /* background-color: #d3f3f5; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* border-radius: 8px; */
+}
+
+.offcanvas-body {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* border-radius: 8px; */
+}
 
 
 .navbar .nav-link {
