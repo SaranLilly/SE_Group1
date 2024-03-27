@@ -6,7 +6,7 @@
     <div>
         <a class="btn btn-primary" href="{{ route('employee.create') }}">New Employee</a>
     </div>
-    
+    <br>
     <div>
         @if(session()->has('success')) 
             <div>

@@ -28,6 +28,7 @@
             margin-bottom: 15px;
             /* เพิ่มระยะห่างระหว่างข้อมูลในแบบฟอร์ม */
             border-radius: 8px;
+            width: 100%;
         }
 
         input[type="submit"] {
@@ -50,6 +51,13 @@
         input[type="submit"]:hover {
             background-color: #2bc678;
             /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อ hover */
+        }
+        
+        input {
+            padding: 8px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            outline: none;
         }
     </style>
 

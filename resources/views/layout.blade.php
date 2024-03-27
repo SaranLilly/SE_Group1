@@ -71,7 +71,7 @@
                                 <li><a class="dropdown-item text-dark"
                                         href="{{ route('evaluation.create') }}">แบบประเมิน</a></li>
 
-                                <li><a class="dropdown-item text-dark" href="{{ route('result.kpi') }}">ผลการประเมิน</a>
+                                <li><a class="dropdown-item text-dark" href="{{ route('result.index') }}">ผลการประเมิน</a>
                                 </li>
                             </ul>
 
