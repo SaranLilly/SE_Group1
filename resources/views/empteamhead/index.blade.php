@@ -36,9 +36,9 @@
                     <td>{{ $employee->email }}</td>
                     <td>{{ $employee->positionName }}</td>
                     <td>{{ $employee->teamName }}</td>
-                    <td><a href="{{ route('empOverall.index') }}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">ผลการทำงาน</a></td>
+                    <td><a href="{{ route('empOverall.index', ['empID' => $employee->empID]) }}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">ผลการทำงาน</a></td>
                 </tr>
             @endforeach
         </table>
     </div>
-@endsection
+@endsection 

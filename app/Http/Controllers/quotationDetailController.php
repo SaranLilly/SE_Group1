@@ -17,6 +17,7 @@ class quotationDetailController extends Controller
         ->join('employee', 'employee.empID', '=', 'quotation.empID')     
         ->join('customers', 'customers.cusId', '=', 'quotation.customerID') 
         ->join('productvarity', 'productvarity.productvarityID', '=', 'quotationdetail.productvarityID')
+        ->join('products', 'products.productsID', '=', 'productvarity.productID')   
         ->get();
 
         return view('quotationdetail.index', ['quotationdetail' => $quotationdetail]);

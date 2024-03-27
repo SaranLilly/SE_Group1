@@ -18,6 +18,7 @@ use App\Http\Controllers\SelectionkpiController;
 use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\TeamleaderController;
 use App\Http\Controllers\productvarityController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -103,7 +104,9 @@ Route::get('/criterion/{criterion}/edit', [CriterionController::class, 'edit'])-
 Route::put('/criterion/{criterion}/update', [CriterionController::class, 'update'])->name('criterion.update');
 Route::delete('/criterion/{criterion}/destroy', [CriterionController::class, 'destroy'])->name('criterion.destroy');
 
-Route::get('/empOverall', [empOverallController::class, 'index'])->name('empOverall.index');
+Route::get('/empOverall/{empID}', [empOverallController::class, 'index'])->name('empOverall.index');
+
+
 
 Route::get('layout', function () {
     return view('layout');
