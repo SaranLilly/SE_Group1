@@ -69,7 +69,7 @@ class EvalutionController extends Controller
             'idset' => 'required',
         ]);
 
-        Evalution::create($data);
+        $eva = Evalution::create($data);
 
         return redirect(route('evaluation.index'));
     }
