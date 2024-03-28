@@ -86,5 +86,28 @@
         @endforeach
     </table>
 </div>
+<div>
+        <h2 style="font-weight: 400">Evaluation results</h2>
+        <table border="1" class="table table-striped table-align-middle">
+            <tr>
+                    {{-- <th>รหัส</th> --}}
+                    <th>หัวข้อ</th>
+                    <th>ผู้ประเมิน</th>
+                    <th>ผู้ถูกประเมิน</th>
+                    <th>ค่าน้ำหนัก</th>
+                    <th>คะแนน</th>
 
+                </tr>
+                @foreach ($results as $result)
+                    <tr class="column">
+                        {{-- <td><label name="resultsId">{{ $result->resultsId  }}</label></td> --}}
+                        <td><label name="idcriterakipi">{{ $result->title }}</label></td>
+                        <td><label name="idevalution">{{ $result->assessN }} {{ $result->assessF }}</label></td>
+                        <td><label name="idevalution">{{ $result->assessedN }} {{ $result->assessedF }}</label></td>
+                        <td><label name="weight">{{ $result->weight }}</label></td>
+                        <td><label name="score">{{ $result->score }}</label></td>
+                        </tr>
+        @endforeach
+    </table>
+</div>
 @endsection

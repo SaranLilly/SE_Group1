@@ -37,7 +37,15 @@ class empOverallController extends Controller
             ->where('employee.empID', '=', $empID)
             ->get();
 
-        return view('empOverall.index', ['quotationdetail' => $quotationdetail, 'orderdetail' => $orderdetail, 'feedbacks' => $feedbacks]);
+            $results = DB::select('SELECT evaluation.idevaluation,e1.firstName as assessN ,e1.lastName as assessF   ,e2.firstName as assessedN  ,e2.lastName assessedF , criteriakpi.title,results.weight,results.score
+            FROM results
+            LEFT JOIN evaluation  ON results.idevalution = evaluation.idevaluation
+            LEFT JOIN (SELECT * FROM employee) as e1 ON e1.empID = evaluation.idassess
+            LEFT JOIN (SELECT * FROM employee) as e2 ON e2.empID = evaluation.idassessed  
+            INNER JOIN criteriakpi ON results.idcriterakipi = criteriakpi.crID
+            WHERE e2.empID =  ?',[$empID]);
+
+        return view('empOverall.index', ['quotationdetail' => $quotationdetail, 'orderdetail' => $orderdetail, 'feedbacks' => $feedbacks, 'results' => $results]);
     }
     
 }
