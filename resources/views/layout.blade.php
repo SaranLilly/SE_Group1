@@ -30,7 +30,7 @@
                     <a class="navbar-brand text-dark" href="#">
                         <img src="https://i.pinimg.com/564x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
                             alt="Logo" width="30px" height="30px" class="d-inline-block align-text-top">
-                        {{$employee_log1}}
+                       {{--  {{$employee_log1}} --}}
                        {{--  @foreach ($employee_log1 as $item)
                             <h4>{{$item->firstName }} {{$item->lastName}}</h4>
                             @if ($item->positionID == 1)

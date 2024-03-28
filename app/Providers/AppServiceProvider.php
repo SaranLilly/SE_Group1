@@ -23,10 +23,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        $employee_log1 = "sssss"; // กำหนดค่าตัวแปรตามที่ต้องการ
+        //$employee_log1 = "sssss"; // กำหนดค่าตัวแปรตามที่ต้องการ
 
         // แชร์ตัวแปรให้ใช้งานได้ทั่วทั้งโปรเจค
-        View::share('employee_log1', $employee_log1);
+        //View::share('employee_log1', $employee_log1);
         
     }
 

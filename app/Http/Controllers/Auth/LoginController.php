@@ -59,7 +59,7 @@ class LoginController extends Controller
         
         if($employee_log != null){
             $this->employee_log1=$employee_log;
-            //View::share('employee_log1',$this->employee_log1);
+            View::share('employee_log1',$this->employee_log1);
             
             //$employee = Auth::user();
             //$employeeFirstName = Auth::user()->employee->firstName;
