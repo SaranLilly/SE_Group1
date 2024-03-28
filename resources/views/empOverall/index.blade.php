@@ -87,7 +87,7 @@
     </table>
 </div>
 <div>
-        <h2 style="font-weight: 400">Evaluation results</h2>
+        <h2 style="font-weight: 400">Evaluation</h2>
         <table border="1" class="table table-striped table-align-middle">
             <tr>
                     {{-- <th>รหัส</th> --}}
@@ -106,6 +106,25 @@
                         <td><label name="idevalution">{{ $result->assessedN }} {{ $result->assessedF }}</label></td>
                         <td><label name="weight">{{ $result->weight }}</label></td>
                         <td><label name="score">{{ $result->score }}</label></td>
+                        </tr>
+        @endforeach
+    </table>
+</div>
+<div>
+        <h2 style="font-weight: 400">Results</h2>
+        <table border="1" class="table table-striped table-align-middle">
+            <tr>
+            
+                    <th>ผู้ประเมิน</th>
+                    <th>ผู้ถูกประเมิน</th>
+                    <th>เกรด</th>
+
+                </tr>
+                @foreach ($Grade as $Grade)
+                    <tr class="column">
+                        <td>{{ $Grade->assessN }} {{ $Grade->assessF }}</td>
+                        <td>{{ $Grade->assessedN }} {{ $Grade->assessedF }}</td>
+                        <td>{{ $Grade->Grade }}</td>
                         </tr>
         @endforeach
     </table>

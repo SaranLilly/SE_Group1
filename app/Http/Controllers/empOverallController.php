@@ -45,7 +45,27 @@ class empOverallController extends Controller
             INNER JOIN criteriakpi ON results.idcriterakipi = criteriakpi.crID
             WHERE e2.empID =  ?',[$empID]);
 
-        return view('empOverall.index', ['quotationdetail' => $quotationdetail, 'orderdetail' => $orderdetail, 'feedbacks' => $feedbacks, 'results' => $results]);
+$Grade = DB::table('results')
+    ->select(DB::raw('
+        evaluation.idevaluation,
+        e1.firstName AS assessN,
+        e1.lastName AS assessF,
+        e2.firstName AS assessedN,
+        e2.lastName AS assessedF,
+        SUM(results.score * results.weight) AS total_score,
+        SUM(results.weight) AS total_weight,
+        SUM(results.score * results.weight) / SUM(results.weight) AS Grade
+    '))
+    ->leftJoin('evaluation', 'results.idevalution', '=', 'evaluation.idevaluation')
+    ->leftJoin(DB::raw('(SELECT * FROM employee) AS e1'), 'e1.empID', '=', 'evaluation.idassess')
+    ->leftJoin(DB::raw('(SELECT * FROM employee) AS e2'), 'e2.empID', '=', 'evaluation.idassessed')
+    ->where('e2.empID', $empID)
+    ->groupBy('evaluation.idevaluation', 'e1.firstName', 'e1.lastName', 'e2.firstName', 'e2.lastName')
+    ->get();
+
+
+
+        return view('empOverall.index', ['quotationdetail' => $quotationdetail, 'orderdetail' => $orderdetail, 'feedbacks' => $feedbacks, 'results' => $results, 'Grade' => $Grade ]);
     }
     
 }
