@@ -1,0 +1,11 @@
+tr:nth-child(odd) {
+    background-color: #D6EAF8;
+  }
+  table .head th {
+    padding: 16px 16px;
+    font-size: 16px;
+    /* font-weight: 800; */
+    color: #0083db; 
+    /* word-wrap: break-word; */
+}
+
