@@ -37,7 +37,70 @@ class empOverallController extends Controller
             ->where('employee.empID', '=', $empID)
             ->get();
 
-        return view('empOverall.index', ['quotationdetail' => $quotationdetail, 'orderdetail' => $orderdetail, 'feedbacks' => $feedbacks]);
+            $results = DB::select('SELECT evaluation.idevaluation,e1.firstName as assessN ,e1.lastName as assessF   ,e2.firstName as assessedN  ,e2.lastName assessedF , criteriakpi.title,results.weight,results.score
+            FROM results
+            LEFT JOIN evaluation  ON results.idevalution = evaluation.idevaluation
+            LEFT JOIN (SELECT * FROM employee) as e1 ON e1.empID = evaluation.idassess
+            LEFT JOIN (SELECT * FROM employee) as e2 ON e2.empID = evaluation.idassessed  
+            INNER JOIN criteriakpi ON results.idcriterakipi = criteriakpi.crID
+            WHERE e2.empID =  ?',[$empID]);
+
+$Grade = DB::table('results')
+    ->select(DB::raw('
+        evaluation.idevaluation,
+        e1.firstName AS assessN,
+        e1.lastName AS assessF,
+        e2.firstName AS assessedN,
+        e2.lastName AS assessedF,
+        SUM(results.score * results.weight) AS total_score,
+        SUM(results.weight) AS total_weight,
+        SUM(results.score * results.weight) / SUM(results.weight) AS Grade
+    '))
+    ->leftJoin('evaluation', 'results.idevalution', '=', 'evaluation.idevaluation')
+    ->leftJoin(DB::raw('(SELECT * FROM employee) AS e1'), 'e1.empID', '=', 'evaluation.idassess')
+    ->leftJoin(DB::raw('(SELECT * FROM employee) AS e2'), 'e2.empID', '=', 'evaluation.idassessed')
+    ->where('e2.empID', $empID)
+    ->groupBy('evaluation.idevaluation', 'e1.firstName', 'e1.lastName', 'e2.firstName', 'e2.lastName')
+    ->get();
+
+    $sell = DB::select('SELECT
+    employee.empID,
+    employee.firstName,
+    employee.lastName,
+    COUNT(orderdetail.orderID) AS total_order,
+    SUM(productvarity.price) AS total_price
+FROM
+    orderdetail
+JOIN orders ON orders.orderID = orderdetail.orderID
+JOIN employee ON employee.empID = orders.empID
+JOIN productvarity ON productvarity.productvarityID = orderdetail.productvarity
+WHERE employee.empID = ? AND orders.statusid = 1
+GROUP BY
+    employee.empID,
+    employee.firstName,
+    employee.lastName', [$empID]);
+
+ $quot = DB::select('SELECT
+employee.empID,
+employee.firstName,
+employee.lastName,
+COUNT(quotationdetail.quotationID) AS total_quotation,
+SUM(productvarity.price) AS total_price
+FROM
+quotationdetail
+JOIN quotation ON quotation.quotationID = quotationdetail.quotationID
+JOIN employee ON employee.empID = quotation.empID
+JOIN customers ON customers.cusId = quotation.customerID
+JOIN productvarity ON productvarity.productvarityID = quotationdetail.productvarityID
+JOIN products ON products.productsID = productvarity.productID
+WHERE employee.empID = ?
+GROUP BY
+employee.empID,
+employee.firstName,
+employee.lastName', [$empID]);
+
+
+        return view('empOverall.index', ['quotationdetail' => $quotationdetail, 'orderdetail' => $orderdetail, 'feedbacks' => $feedbacks, 'results' => $results, 'Grade' => $Grade , 'sell'=>$sell , 'quot'=>$quot ]);
     }
     
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,8 +29,13 @@
                     <a class="navbar-brand text-dark" href="#">
                         <img src="https://i.pinimg.com/564x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
                             alt="Logo" width="30px" height="30px" class="d-inline-block align-text-top">
+<<<<<<< HEAD
                        {{--  {{$employee_log1}} --}}
                        {{--  @foreach ($employee_log1 as $item)
+=======
+                        {{ $employee_log1 }}
+                        {{--  @foreach ($employee_log1 as $item)
+>>>>>>> 3509a8796298a328fd963ef267c796c6f6985e08
                             <h4>{{$item->firstName }} {{$item->lastName}}</h4>
                             @if ($item->positionID == 1)
                                 <h5>ผู้จัดการ</h5>
@@ -58,7 +62,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-light border-0">
                                 <li><a class="dropdown-item text-dark"
-                                        href="{{ route('empteamhead.index') }}">ข้อมูลพนักงาน</a></li>
+                                        href="{{ route('employee.index') }}">ข้อมูลพนักงาน</a></li>
                                 <li><a class="dropdown-item text-dark" href="#">ข้อมูลพนักงานในทีม</a></li>
                             </ul>
                         </li>
@@ -70,11 +74,25 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-light border-0">
                                 <li><a class="dropdown-item text-dark"
-                                        href="{{ route('criterion.index') }}">เกณฑ์การประเมิน</a></li>
+                                    href="{{ route('selectionkpi.index') }}">ชุดการประเมินและหัวข้อการประเมิน</a></li>
+
+                                <li><a class="dropdown-item text-dark"
+
+                                        {{-- href="{{ route('criteriakpi.index') }}">หัวข้อการประเมิน</a></li> --}}
+
+                                    href="{{ route('criteriakpiHR.index') }}">หัวข้อการประเมิน</a></li>
+{{-- 
+                                <li><a class="dropdown-item text-dark"
+                                        href="{{ route('criterion.index') }}">เกณฑ์การประเมิน</a></li> --}}
+
+                                
+
+
                                 <li><a class="dropdown-item text-dark"
                                         href="{{ route('evaluation.create') }}">แบบประเมิน</a></li>
 
-                                <li><a class="dropdown-item text-dark" href="{{ route('result.index') }}">ผลการประเมิน</a>
+                                <li><a class="dropdown-item text-dark"
+                                        href="{{ route('result.index') }}">ผลการประเมิน</a>
                                 </li>
                             </ul>
 
@@ -84,7 +102,7 @@
             </div>
             <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                       ออกจากระบบ
+                ออกจากระบบ
             </a>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

@@ -4,7 +4,6 @@
     <h1 style="font-weight: 800">Evaluation</h1>
     <button><a class="btn btn-primary" href="/evaluation/create">เพิ่ม</a></button>
     <br><br>
-
     <div class="table">
         <table style="width: 100%">
             <thead>

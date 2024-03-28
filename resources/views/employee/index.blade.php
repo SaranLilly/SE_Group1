@@ -1,10 +1,18 @@
 @extends('layout')
 @section('title','ข้อมูลพนักงาน')
 @section('content')
+
+ <style>
+ </style>
+
     <h1 style="font-weight: 800">ข้อมูลพนักงาน</h1>
 
-    <div>
+    {{-- <div>
         <a class="btn btn-primary" href="{{ route('employee.create') }}">New Employee</a>
+    </div> --}}
+    <div class=" py-3 px-1 d-grid gap-2 d-md-flex justify-content-md-end ">
+        <a class="btn btn-primary  md-8 font-family-monospace"
+            href="{{ route('employee.create') }}">เพิ่ม</a>
     </div>
     <br>
     <div>
@@ -34,6 +42,7 @@
                 <th>ทีม</th>
                 <th>edit</th>
                 <th>delete</th>
+                <th>ผลการทำงาน</th>
                 
             </tr>
             @foreach ($employees as $employee)
@@ -64,6 +73,9 @@
                             @method('delete')
                             <input type="submit" value="ลบ" class="btn btn-danger">
                         </form>
+                    </td>
+                    <td>
+                    <a href="{{ route('empOverall.index', ['empID' => $employee->empID]) }}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">ผลการทำงาน</a>
                     </td>
                 </tr>
             @endforeach

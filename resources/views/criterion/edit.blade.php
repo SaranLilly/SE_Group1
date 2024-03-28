@@ -41,7 +41,7 @@
             /*เปลี่ยนสีพื้นหลังของปุ่ม  */
             color: white;
             /* เปลี่ยนสีข้อความในปุ่มเป็นขาว */
-            border-radius: 5px;
+            border-radius: 10px;
             /* เพิ่มความโค้งให้กับขอบของปุ่ม */
             cursor: pointer;
             transition: background-color 0.3s;
