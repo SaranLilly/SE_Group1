@@ -14,8 +14,11 @@ class OrderdetailController extends Controller
     public function index(){
         $orderdetail = DB::table('orderdetail')
         ->join('orders', 'orders.orderID', '=', 'orderdetail.orderID')
+        ->join('status', 'status.statusid', '=', 'orders.statusid')       
         ->join('employee', 'employee.empID', '=', 'orders.empID')
+        ->join('customers', 'customers.cusId', '=', 'orders.customerID')
         ->join('productvarity', 'productvarity.productvarityID','=', 'orderdetail.productvarity')
+        ->join('products', 'products.productsID', '=', 'productvarity.productID')   
         ->get();
 
         return view('orderdetail.index', ['orderdetail' => $orderdetail]);

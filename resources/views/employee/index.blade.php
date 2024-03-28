@@ -34,6 +34,7 @@
                 <th>ทีม</th>
                 <th>edit</th>
                 <th>delete</th>
+                
             </tr>
             @foreach ($employees as $employee)
             

@@ -56,6 +56,7 @@
     <div class="edit">
         <h1 style="font-weight: 800">เพิ่มการประเมิน</h1>
         <form method="post" action="{{ route('evaluation.store') }}">
+          {{-- <form method="POST" action="{{ route('result.create') }}"> --}}
             @csrf
             @method('post')
             <div class="form-label">
@@ -91,7 +92,7 @@
                 </select>
             </div>
             <div><br>
-                <input type="submit" value="บันทึก">
+                <input type="submit" value="บันทึก" >
             </div>
         </form>
     </div>

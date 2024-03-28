@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,19 +16,11 @@
     <nav class="navbar navbar-dark fixed-top">
         <div class="container-fluid">
 
-            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button> --}}
-
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button> --}}
 
             <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="offcanvasDarkNavbar"
                 aria-labelledby="offcanvasDarkNavbarLabel">
@@ -37,9 +30,19 @@
                     <a class="navbar-brand text-dark" href="#">
                         <img src="https://i.pinimg.com/564x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg"
                             alt="Logo" width="30px" height="30px" class="d-inline-block align-text-top">
-                        {{ Auth::user()->name }}
-                        &nbsp;<br> {{ Auth::user()->email }}
-
+                        {{$employee_log1}}
+                       {{--  @foreach ($employee_log1 as $item)
+                            <h4>{{$item->firstName }} {{$item->lastName}}</h4>
+                            @if ($item->positionID == 1)
+                                <h5>ผู้จัดการ</h5>
+                            @elseif($item->positionID == 2)
+                                <h5>หัวหน้าทีม</h5>
+                            @elseif($item->positionID == 3)
+                                <h5>พนักงาน</h5>
+                            @elseif($item->positionID == 4)
+                                <h5>พนักงานฝ่ายบุคคล</h5> 
+                            @endif
+                        @endforeach --}}
                     </a>
 
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -81,7 +84,7 @@
             </div>
             <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
+                       ออกจากระบบ
             </a>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -96,10 +99,6 @@
                 </form>
             </div>
 
-            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16" >
-              <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-              <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-            </svg> --}}
 
         </div>
     </nav>
