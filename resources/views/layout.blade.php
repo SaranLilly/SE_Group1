@@ -72,7 +72,7 @@
                                         href="{{ route('criterion.index') }}">เกณฑ์การประเมิน</a></li>
 
                                 <li><a class="dropdown-item text-dark"
-                                        href="#">หัวข้อการประเมิน</a></li>
+                                        href="{{ route('criteriakpi.index') }}">หัวข้อการประเมิน</a></li>
 
                                 <li><a class="dropdown-item text-dark"
                                         href="{{ route('evaluation.create') }}">แบบประเมิน</a></li>
