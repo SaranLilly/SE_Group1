@@ -7,7 +7,7 @@ use App\Models\Setkpi;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class CriterionHRController extends Controller
+class SetKpiHRController extends Controller
 {
     public function index(){
 
