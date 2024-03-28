@@ -93,8 +93,21 @@
             </div>
             <div><br>
                 <input type="submit" value="บันทึก" >
-            </div>
+                 </div>
+                
+                
+           
         </form>
+
+        {{-- <form method="POST" action="{{ route('result.create') }}">
+            @csrf
+            <div>
+                <input type="submit" value="ประเมิน" >
+            </div>
+        </form> --}}
+
+        
+
     </div>
 
 @endsection

@@ -21,7 +21,7 @@
             </select>
             </div>
             <div>
-            <label> </label>
+            {{-- <label> </label> --}}
             <select name="idevalution">
                 @foreach($evaluations as $evaluation)
                     <option value="{{ $evaluation->idevaluation  }}">{{ $evaluation->idevaluation }}</option>
@@ -36,6 +36,20 @@
                 <label>score </label>
                 <input type="text" name="score" placeholder="score" >
             </div>
+
+            {{-- <div>
+                <label>23</label>
+                <input type="checkbox" name="scores" placeholder="score">
+            </div>
+            <div>
+                <label>22</label>
+                <input type="checkbox" name="scores" placeholder="score">
+            </div>
+            <div>
+                <label>21</label>
+                <input type="checkbox" name="scores" placeholder="score">
+            </div>
+             --}}
         
         </div>
         <div>

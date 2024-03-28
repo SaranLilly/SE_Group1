@@ -61,8 +61,8 @@ Route::get('/dropdown', [EvalutionController::class, 'showDropdown'])->name('sho
 Route::post('/process-selection', [EvalutionController::class, 'processSelection'])->name('process_selection');
 
 Route::get('/result', [ResultsController::class, 'index'])->name('result.index');
-// Route::get('/result/create', [ResultsController::class, 'create'])->name('result.create');
-Route::post('/result/create', [ResultsController::class, 'create'])->name('result.create');
+Route::get('/result/create', [ResultsController::class, 'create'])->name('result.create');
+//Route::post('/result/create', [ResultsController::class, 'create'])->name('result.create');
 Route::post('/result', [ResultsController::class, 'store'])->name('result.store');
 // Route::post('/result', [ResultsController::class, 'store'])->name('result.store');
 Route::get('/result/{result}/edit', [ResultsController::class, 'edit'])->name('result.edit');
@@ -160,14 +160,6 @@ Route::delete('/productvarity/{productvarity}/destroy', [productvarityController
 // Route::get('/test', function () {
 //     return view("test/index");
 // });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
