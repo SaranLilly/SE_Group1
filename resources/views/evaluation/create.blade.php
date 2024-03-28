@@ -54,7 +54,7 @@
     </style>
 
     <div class="edit">
-        <h1 style="font-weight: 800">เพิ่มการประเมิน</h1>
+        <h1 style="font-weight: 800">การประเมิน</h1>
         <form method="post" action="{{ route('evaluation.store') }}">
           {{-- <form method="POST" action="{{ route('result.create') }}"> --}}
             @csrf

@@ -1,6 +1,10 @@
 @extends('layout')
 @section('title','ข้อมูลพนักงาน')
 @section('content')
+
+ <style>
+ </style>
+
     <h1 style="font-weight: 800">ข้อมูลพนักงาน</h1>
 
     <div>
@@ -34,6 +38,7 @@
                 <th>ทีม</th>
                 <th>edit</th>
                 <th>delete</th>
+                <th>ผลการทำงาน</th>
                 
             </tr>
             @foreach ($employees as $employee)
@@ -64,6 +69,9 @@
                             @method('delete')
                             <input type="submit" value="ลบ" class="btn btn-danger">
                         </form>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="#">ผลการทำงาน</a>
                     </td>
                 </tr>
             @endforeach
