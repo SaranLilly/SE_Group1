@@ -71,7 +71,7 @@
                         </form>
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="#">ผลการทำงาน</a>
+                    <a href="{{ route('empOverall.index', ['empID' => $employee->empID]) }}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">ผลการทำงาน</a>
                     </td>
                 </tr>
             @endforeach
