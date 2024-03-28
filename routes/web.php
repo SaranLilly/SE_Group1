@@ -43,3 +43,4 @@ Route::put('/topicEvaluationFormHRPage/{criteriakpi}/update', [CriteriakpiHRCont
 Route::delete('/topicEvaluationFormHRPage/{criteriakpi}/destroy', [CriteriakpiHRController::class, 'destroy'])->name('deletecriteriakpiHR');
 
 Route::get('/allResultHRPages', [ResultHRController::class, 'index'])->name('resultHR');
+Route::get('/allResultHRPages', [ResultHRController::class, 'index'])->name('resultHR');

@@ -7,7 +7,7 @@
         <a class="btn btn-primary" href="{{ route('employee.create') }}">New Employee</a>
     </div> --}}
     <div class=" py-3 px-1 d-grid gap-2 d-md-flex justify-content-md-end ">
-        <a class="btn btn-primary  md-8 font-family-monospace" href="{{ route('allemployeeHR') }}">เพิ่มพนักงาน</a>
+        <a class="btn btn-primary  md-8 font-family-monospace" href="{{ route('addemployeeHR') }}">เพิ่มพนักงาน</a>
       </div>
     <div>
         @if(session()->has('success'))
