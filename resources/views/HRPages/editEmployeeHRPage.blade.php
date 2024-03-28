@@ -13,7 +13,7 @@
         </ul>
         @endif
     </div>
-    <form class="row g-3" method="POST" action="{{ route('setkpiupdateHR',['employee'=>$employee->empID]) }}">
+    <form class="row g-3" method="POST" action="{{ route('employeeHR.update',['employee'=>$employee->empID]) }}">
 
         @csrf
         @method('put')
