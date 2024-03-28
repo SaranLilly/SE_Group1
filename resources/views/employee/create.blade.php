@@ -1,7 +1,74 @@
 @extends('layout')
 @section('titlle','การเพิ่มข้อมูลพนักงาน')
 @section('content')
-    <h1>Create Employee</h1>
+
+<style>
+    .edit {
+        margin: auto;
+        /* จัดให้อยู่ตรงกลาง */
+        width: 50%;
+        /* ปรับขนาดให้กว้าง 50% */
+        padding: 20px;
+        /* เพิ่มช่องว่างรอบขอบ */
+        border-radius: 10px;
+        /* เพิ่มความโค้งให้กับขอบ */
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        /* เพิ่มเงา */
+    }
+
+    form {
+        margin-top: 20px;
+        /* เพิ่มระยะห่างด้านบนของแบบฟอร์ม */
+    }
+
+    .form-label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        /* เพิ่มระยะห่างระหว่างข้อมูลในแบบฟอร์ม */
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        /* ทำให้ปุ่มเต็มความกว้าง */
+        padding: 10px;
+        /* เพิ่มช่องว่างในปุ่ม */
+        border: none;
+        background-color: #1d8551;
+        /*เปลี่ยนสีพื้นหลังของปุ่ม  */
+        color: white;
+        /* เปลี่ยนสีข้อความในปุ่มเป็นขาว */
+        border-radius: 10px;
+        /* เพิ่มความโค้งให้กับขอบของปุ่ม */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        /* เพิ่มเอฟเฟคการเปลี่ยนสีเมื่อ hover บนปุ่ม */
+    }
+
+    input[type="submit"]:hover {
+        background-color: #2bc678;
+        /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อ hover */
+    }
+
+    select {
+        padding: 8px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    input {
+        padding: 8px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+</style>
+
+<div class="edit">
+    <h1 style="font-weight:800">เพิ่มข้อมูลพนักงาน</h1>
     <div>
         @if($errors->any())
         <ul>
@@ -20,7 +87,7 @@
             <label>Prefix</label>
             <input type="text" name="prefix" placeholder="prefix">
         </div> --}}
-        <div>
+        <div class="form-label">
             <label for="prefix">Prefix</label>
             <select name="prefix" id="prefix">
                 <option value="นาย">นาย</option>
@@ -29,43 +96,43 @@
             </select>
         </div>
         
-        <div>
+        <div class="form-label">
             <label>Firstname</label>
             <input type="text" name="firstName" placeholder="firstName">
         </div>
-        <div>
+        <div class="form-label">
             <label>Lastname</label>
             <input type="text" name="lastName" placeholder="lastName">
         </div>
-        <div>
+        <div class="form-label">
             <label>Nickname</label>
             <input type="text" name="nickname" placeholder="nickname">
         </div>
-        <div>
+        <div class="form-label">
             <label>userName</label>
             <input type="text" name="userName" placeholder="userName">
         </div>
-        <div>
+        <div class="form-label">
             <label>Password</label>
             <input type="password" name="password" placeholder="password">
         </div>
-        <div>
+        <div class="form-label">
             <label>PhoneNumber</label>
             <input type="text" name="phoneNumber" placeholder="phoneNumber">
         </div>
-        <div>
+        <div class="form-label">
             <label>IdCard</label>
             <input type="text" name="idCard" placeholder="idCard">
         </div>
-        <div>
+        <div class="form-label">
             <label>Birth</label>
             <input type="date" name="birth" placeholder="birth">
         </div>
-        <div>
+        <div class="form-label">
             <label>Email</label>
             <input type="text" name="email" placeholder="email">
         </div>
-        <div>
+        <div class="form-label">
             <label>Position </label>
             <select name="positionID">
                 @foreach($positions as $position)
@@ -73,7 +140,7 @@
                 @endforeach
             </select>
         </div>
-        <div>
+        <div class="form-label">
             <label>SaleTeam </label>
             <select name="saleTeamID">
                 @foreach($saleteams as $saleteam)
@@ -90,8 +157,11 @@
             <label>SaleTeam </label>
             <input type="text" name="teamName" placeholder="teamName">
         </div> --}}
-        <div>
+        <div class="form-label">
             <input type="submit" value="Save New Employee">
         </div>
     </form>
+
+</div>
+    
 @endsection

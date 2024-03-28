@@ -7,8 +7,12 @@
 
     <h1 style="font-weight: 800">ข้อมูลพนักงาน</h1>
 
-    <div>
+    {{-- <div>
         <a class="btn btn-primary" href="{{ route('employee.create') }}">New Employee</a>
+    </div> --}}
+    <div class=" py-3 px-1 d-grid gap-2 d-md-flex justify-content-md-end ">
+        <a class="btn btn-primary  md-8 font-family-monospace"
+            href="{{ route('employee.create') }}">เพิ่ม</a>
     </div>
     <br>
     <div>

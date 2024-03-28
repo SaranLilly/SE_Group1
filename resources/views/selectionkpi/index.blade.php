@@ -1,12 +1,18 @@
 @extends('layout')
 @section('content')
-    <h1>Selectionkpi</h1>
-    <button><a class="btn btn-primary" href="/selectionkpi/create" >เพิ่ม</a></button>
-    <br><br>
-    <table class="table table-striped table-align-middle" border="1">
-        
+    <h1 style="font-weight: 800">ชุดการประเมินและหัวข้อการประเมิน</h1>
+
+    <div class=" py-3 px-1 d-grid gap-2 d-md-flex justify-content-md-end ">
+      <a class="btn btn-primary  md-8 font-family-monospace"
+          href="/selectionkpi/create">เพิ่ม</a>
+   </div>
+
+{{-- 
+    <button><a class="btn btn-primary" href="/selectionkpi/create" >เพิ่ม</a></button> --}}
+    <div class="table">
+      <table style="width: 100%">
         <thead>
-          <tr>
+          <tr class="head">
             {{-- <th>รหัส</th> --}}
             <th>ชื่อชุด</th>
             <th>หัวข้อ</th>
@@ -17,7 +23,7 @@
         </thead>
         <tbody>
             @foreach ($selectionkpis as $selectionkpi)
-            <tr>
+            <tr class="column">
             {{-- <td><label name="id">{{ $selectionkpi->idselection }}</label></td> --}}
             <td><label name="set">{{ $selectionkpi->titleset}}</label></td>
             <td><label name="kpi">{{ $selectionkpi->title}}</label></td>
@@ -33,4 +39,9 @@
             @endforeach            
         </tbody>
       </table>
+
+
+
+    </div>
+    
 @endsection

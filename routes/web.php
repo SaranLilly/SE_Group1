@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CriteriakpiController;
+use App\Http\Controllers\CriteriakpiHRController;
 use App\Http\Controllers\CriterionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\empOverallController;
@@ -20,6 +21,7 @@ use App\Http\Controllers\SetkpiController;
 use App\Http\Controllers\TeamleaderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SetKpiHRController;
 
 /* Route::get('/', function () {
 return view('welcome');
@@ -156,6 +158,15 @@ Route::post('/productvarity', [productvarityController::class, 'listofproductvar
 Route::get('/productvarity/{productvarity}/edit', [productvarityController::class, 'edit'])->name('productvarity.edit');
 Route::put('/productvarity/{productvarity}/update', [productvarityController::class, 'update'])->name('productvarity.update');
 Route::delete('/productvarity/{productvarity}/destroy', [productvarityController::class, 'destroy'])->name('productvarity.destroy');
+
+
+Route::get('/topicEvaluationFormHRPage', [CriteriakpiHRController::class, 'index'])->name('criteriakpiHR.index');
+Route::get('/addtopicEvaluationFormHRPage', [CriteriakpiHRController::class, 'create'])->name('addcriteriakpiHR');
+Route::post('/topicEvaluationFormHRPage', [CriteriakpiHRController::class, 'listofname'])->name('criteriakpiHR.listofname');
+Route::get('/topicEvaluationFormHRPage/{criteriakpi}/edit', [CriteriakpiHRController::class, 'edit'])->name('editcriteriakpiHR');
+Route::put('/topicEvaluationFormHRPage/{criteriakpi}/update', [CriteriakpiHRController::class, 'update'])->name('updatecriteriakpiHR');
+Route::delete('/topicEvaluationFormHRPage/{criteriakpi}/destroy', [CriteriakpiHRController::class, 'destroy'])->name('deletecriteriakpiHR');
+
 
 // Route::get('/test', function () {
 //     return view("test/index");
