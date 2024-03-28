@@ -63,9 +63,44 @@ $Grade = DB::table('results')
     ->groupBy('evaluation.idevaluation', 'e1.firstName', 'e1.lastName', 'e2.firstName', 'e2.lastName')
     ->get();
 
+    $sell = DB::select('SELECT
+    employee.empID,
+    employee.firstName,
+    employee.lastName,
+    COUNT(orderdetail.orderID) AS total_order,
+    SUM(productvarity.price) AS total_price
+FROM
+    orderdetail
+JOIN orders ON orders.orderID = orderdetail.orderID
+JOIN employee ON employee.empID = orders.empID
+JOIN productvarity ON productvarity.productvarityID = orderdetail.productvarity
+WHERE employee.empID = ? AND orders.statusid = 1
+GROUP BY
+    employee.empID,
+    employee.firstName,
+    employee.lastName', [$empID]);
+
+ $quot = DB::select('SELECT
+employee.empID,
+employee.firstName,
+employee.lastName,
+COUNT(quotationdetail.quotationID) AS total_quotation,
+SUM(productvarity.price) AS total_price
+FROM
+quotationdetail
+JOIN quotation ON quotation.quotationID = quotationdetail.quotationID
+JOIN employee ON employee.empID = quotation.empID
+JOIN customers ON customers.cusId = quotation.customerID
+JOIN productvarity ON productvarity.productvarityID = quotationdetail.productvarityID
+JOIN products ON products.productsID = productvarity.productID
+WHERE employee.empID = ?
+GROUP BY
+employee.empID,
+employee.firstName,
+employee.lastName', [$empID]);
 
 
-        return view('empOverall.index', ['quotationdetail' => $quotationdetail, 'orderdetail' => $orderdetail, 'feedbacks' => $feedbacks, 'results' => $results, 'Grade' => $Grade ]);
+        return view('empOverall.index', ['quotationdetail' => $quotationdetail, 'orderdetail' => $orderdetail, 'feedbacks' => $feedbacks, 'results' => $results, 'Grade' => $Grade , 'sell'=>$sell , 'quot'=>$quot ]);
     }
     
 }

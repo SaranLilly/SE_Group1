@@ -24,8 +24,8 @@
 
         @foreach ($orderdetail as $detail)
             <tr>
-                <td>{{ $detail->firstName }}</td>
-                <td>{{ $detail->firstname }}</td>
+                <td>{{ $detail->firstName }} {{ $detail->lastName }}</td>
+                <td>{{ $detail->firstname }} {{ $detail->lastname }}</td>
                 <td>{{ $detail->productname }}</td>
                 <td>{{ $detail->color }}</td>
                 <td>{{ $detail->price }}</td>
@@ -34,7 +34,25 @@
         @endforeach
     </table>
 </div>
+<div>
+        <h2 style="font-weight: 400">Sells</h2>
+        <table border="1" class="table table-striped table-align-middle">
+            <tr>
+            
+                    <th>พนักงาน</th>
+                    <th>จำนวนคันที่ขายได้</th>
+                    <th>ยอดขาย</th>
 
+                </tr>
+                @foreach ($sell as $sell)
+                    <tr class="column">
+                        <td>{{ $sell->firstName }} {{ $sell->lastName}}</td>
+                        <td>{{ $sell->total_order }}</td>
+                        <td>{{ $sell->total_price }}</td>
+                        </tr>
+        @endforeach
+    </table>
+</div>
 
 <div>
     <h2 style="font-weight: 400">Quotation</h2>
@@ -49,14 +67,41 @@
 
         @foreach ($quotationdetail as $quotationdetail)
             <tr>
-                <td>{{ $quotationdetail->firstName }}</td>
-                <td>{{ $quotationdetail->firstname }}</td>
+                <td>{{ $quotationdetail->firstName }} {{ $quotationdetail->lastName }}</td>
+                <td>{{ $quotationdetail->firstname }} {{ $quotationdetail->lastname }}</td>
                 <td>{{ $quotationdetail->productname }}</td>
                 <td>{{ $quotationdetail->color }}</td>
                 <td>{{ $quotationdetail->price }}</td>
             </tr>
         @endforeach
     </table>
+</div>
+<div>
+    <h2 style="font-weight: 400">TotalQuotation</h2>
+    <table border="1" class="table table-striped">
+        <tr>
+            <th>พนักงาน</th>
+            <th>จำนวน</th>
+            <th>ยอดรวมราคา</th>
+        </tr>
+
+        @foreach ($quot as $quot)
+            <tr>
+                <td>{{ $quot->firstName }}  {{ $quot->lastName }}</td>
+                <td>{{ $quot->total_quotation }}</td>
+                <td>{{ $quot->total_price }}</td>
+            </tr>
+        @endforeach
+    </table>
+</div>
+
+<div>
+    <h2 style="font-weight: 400">Sells/TotalQuotation*100</h2>
+    @if ($quot != null && $quot->total_quotation != 0)
+        {{ ($sell->total_order / $quot->total_quotation) * 100 }}
+    @else
+        0
+    @endif
 </div>
 
 <div>
