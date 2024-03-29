@@ -10,7 +10,7 @@
         <tbody>
         @foreach ($criteriakpis as $criteriakpi)
         <tr>
-         <td><input type="hidden" name="idcriterakipi" value={{$criteriakpi->crID}}>{{ $criteriakpi->title}}</input></td>
+         <td><input type="hidden" name="idcriterakipi[]" value={{$criteriakpi->crID}}>{{ $criteriakpi->title}}</input></td>
             @foreach ($selectionkpis as $select)
                 <tr>
                 @if ($select->idcriteriakpi == $criteriakpi->crID)
@@ -21,7 +21,7 @@
                     <td>{{ $select->max}} - {{$select->min}}</td>
 
                     <td><input value="{{ $select->score }}" type="hidden" name="weight">{{ $select->levelOfQuality}}</td>
-                    <td><input type="checkbox" class="single-checkbox" value="{{ $select->score }}" name="score" ></td>
+                    <td><input type="checkbox" class="single-checkbox" value="{{ $select->score }}" name="score[]" ></td>
                 </tr>
                 @endif
             @endforeach
