@@ -99,39 +99,39 @@
         
         <div class="form-label">
             <label>ชื่อ</label>
-            <input type="text" name="firstName" placeholder="firstName">
+            <input type="text" name="firstName" placeholder="Firstname">
         </div>
         <div class="form-label">
             <label>นามสกุล</label>
-            <input type="text" name="lastName" placeholder="lastName">
+            <input type="text" name="lastName" placeholder="Lastname">
         </div>
         <div class="form-label">
             <label>ชื่อเล่น</label>
-            <input type="text" name="nickname" placeholder="nickname">
+            <input type="text" name="nickname" placeholder="Nickname">
         </div>
         <div class="form-label">
             <label>Username</label>
-            <input type="text" name="userName" placeholder="userName">
+            <input type="text" name="userName" placeholder="Username">
         </div>
         <div class="form-label">
             <label>Password</label>
-            <input type="password" name="password" placeholder="password">
+            <input type="password" name="password" placeholder="Password">
         </div>
         <div class="form-label">
             <label>เบอร์โทรศัพท์</label>
-            <input type="text" name="phoneNumber" placeholder="phoneNumber">
+            <input type="text" name="phoneNumber" placeholder="Phonenumber">
         </div>
         <div class="form-label">
             <label>หมายเลขบัตรประชาชน</label>
-            <input type="text" name="idCard" placeholder="idCard">
+            <input type="text" name="idCard" placeholder="Idcard">
         </div>
         <div class="form-label">
             <label>วันเกิด</label>
-            <input type="date" name="birth" placeholder="birth">
+            <input type="date" name="birth" placeholder="Birth">
         </div>
         <div class="form-label">
             <label>อีเมล</label>
-            <input type="text" name="email" placeholder="email">
+            <input type="text" name="email" placeholder="Email">
         </div>
         <div class="form-label">
             <label>ตำแหน่ง</label>

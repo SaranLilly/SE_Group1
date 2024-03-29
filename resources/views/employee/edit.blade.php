@@ -88,39 +88,39 @@
             </div>
             <div class="form-label">
                 <label>ชื่อ</label>
-                <input type="text" name="firstName" placeholder="firstName" value="{{ $employee->firstName }}">
+                <input type="text" name="firstName" placeholder="firstname" value="{{ $employee->firstName }}">
             </div>
             <div class="form-label">
                 <label>นามสกุล</label>
-                <input type="text" name="lastName" placeholder="lastName" value="{{ $employee->lastName }}">
+                <input type="text" name="lastName" placeholder="Lastname" value="{{ $employee->lastName }}">
             </div>
             <div class="form-label">
                 <label>ชื่อเล่น</label>
-                <input type="text" name="nickname" placeholder="nickname" value="{{ $employee->nickname }}">
+                <input type="text" name="nickname" placeholder="Nickname" value="{{ $employee->nickname }}">
             </div>
             <div class="form-label">
                 <label>Username</label>
-                <input type="text" name="userName" placeholder="userName" value="{{ $employee->userName }}">
+                <input type="text" name="userName" placeholder="Username" value="{{ $employee->userName }}">
             </div>
             <div class="form-label">
                 <label>Password</label>
-                <input type="password" name="password" placeholder="password" value="{{ $employee->password }}">
+                <input type="password" name="password" placeholder="Password" value="{{ $employee->password }}">
             </div>
             <div class="form-label">
                 <label>หมายเลขโทรศัพท์</label>
-                <input type="text" name="phoneNumber" placeholder="phoneNumber" value="{{ $employee->phoneNumber }}">
+                <input type="text" name="phoneNumber" placeholder="Phonenumber" value="{{ $employee->phoneNumber }}">
             </div>
             <div class="form-label">
                 <label>หมายเลขบัตรประชาชน</label>
-                <input type="text" name="idCard" placeholder="idCard" value="{{ $employee->idCard }}">
+                <input type="text" name="idCard" placeholder="Idcard" value="{{ $employee->idCard }}">
             </div>
             <div class="form-label">
                 <label>วันเกิด</label>
-                <input type="date" name="birth" placeholder="birth" value="{{ $employee->birth }}">
+                <input type="date" name="birth" placeholder="Birth" value="{{ $employee->birth }}">
             </div>
             <div class="form-label">
                 <label>อีเมล</label>
-                <input type="text" name="email" placeholder="email" value="{{ $employee->email }}">
+                <input type="text" name="email" placeholder="Email" value="{{ $employee->email }}">
             </div>
             <div class="form-label">
                 <label>ตำแหน่ง</label>
