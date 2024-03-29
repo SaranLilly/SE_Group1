@@ -95,7 +95,7 @@
 
 
             <div><br>
-                <input type="submit" value="แก้ไข">
+                <input type="submit" value="บันทึก">
             </div>
         </form>
 

@@ -5,7 +5,7 @@
 <style>
     .edit {
         margin: auto;
-        width: 59%;
+        width: 50%;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
@@ -79,7 +79,7 @@
             <input type="text" name="prefix" placeholder="prefix" value="{{ $employee->prefix }}">
         </div> --}}
             <div class="form-label" class="col-md-6">
-                <label for="prefix">Prefix</label>
+                <label for="prefix">คำนำหน้า</label>
                 <select name="prefix" id="prefix">
                     <option value="นาย">นาย</option>
                     <option value="นาง">นาง</option>
@@ -87,19 +87,19 @@
                 </select>
             </div>
             <div class="form-label">
-                <label>Firstname</label>
+                <label>ชื่อ</label>
                 <input type="text" name="firstName" placeholder="firstName" value="{{ $employee->firstName }}">
             </div>
             <div class="form-label">
-                <label>Lastname</label>
+                <label>นามสกุล</label>
                 <input type="text" name="lastName" placeholder="lastName" value="{{ $employee->lastName }}">
             </div>
             <div class="form-label">
-                <label>Nickname</label>
+                <label>ชื่อเล่น</label>
                 <input type="text" name="nickname" placeholder="nickname" value="{{ $employee->nickname }}">
             </div>
             <div class="form-label">
-                <label>userName</label>
+                <label>Username</label>
                 <input type="text" name="userName" placeholder="userName" value="{{ $employee->userName }}">
             </div>
             <div class="form-label">
@@ -107,23 +107,23 @@
                 <input type="password" name="password" placeholder="password" value="{{ $employee->password }}">
             </div>
             <div class="form-label">
-                <label>PhoneNumber</label>
+                <label>หมายเลขโทรศัพท์</label>
                 <input type="text" name="phoneNumber" placeholder="phoneNumber" value="{{ $employee->phoneNumber }}">
             </div>
             <div class="form-label">
-                <label>IdCard</label>
+                <label>หมายเลขบัตรประชาชน</label>
                 <input type="text" name="idCard" placeholder="idCard" value="{{ $employee->idCard }}">
             </div>
             <div class="form-label">
-                <label>Birth</label>
+                <label>วันเกิด</label>
                 <input type="date" name="birth" placeholder="birth" value="{{ $employee->birth }}">
             </div>
             <div class="form-label">
-                <label>Email</label>
+                <label>อีเมล</label>
                 <input type="text" name="email" placeholder="email" value="{{ $employee->email }}">
             </div>
             <div class="form-label">
-                <label>Position </label>
+                <label>ตำแหน่ง</label>
                 <select name="positionID">
                     @foreach ($positions as $position)
                         <option value="{{ $position->positionID }}">{{ $position->positionName }}</option>
@@ -131,7 +131,7 @@
                 </select>
             </div>
             <div class="form-label">
-                <label>SaleTeam </label>
+                <label>ทีม</label>
                 <select name="saleTeamID">
                     @foreach ($saleteams as $saleteam)
                         <option value="{{ $saleteam->saleTeamID }}">{{ $saleteam->teamName }}</option>

@@ -1,113 +1,169 @@
 @extends('layout')
-@section('title','หน้าผลการทำงาน')
+@section('title', 'หน้าผลการทำงาน')
 @section('content')
-<h1 style="font-weight: 800">ผลการทำงาน</h1> <br> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    <div>
-        @if (session()->has('success'))
-            <div>
-                {{ session('success') }}
-            </div>
-        @endif
-   <!-- Orders Table -->
-<div>
-    <h2 style="font-weight: 400">Orders</h2>
-    <table border="1" class="table table-striped">
-        <tr>
-            <th>พนักงาน</th>
-            <th>ลูกค้า</th>
-            <th>สินค้า</th>
-            <th>สี</th>
-            <th>ราคา</th>
-            <th>สถานะ</th>
-        </tr>
+        h1 {
+            font-weight: 800;
+            color: black;
+        }
+        h2 {
+            color: rgb(92, 83, 83);
+            font-weight: 200;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
 
-        @foreach ($orderdetail as $detail)
-            <tr>
-                <td>{{ $detail->firstName }} {{ $detail->lastName }}</td>
-                <td>{{ $detail->firstname }} {{ $detail->lastname }}</td>
-                <td>{{ $detail->productname }}</td>
-                <td>{{ $detail->color }}</td>
-                <td>{{ $detail->price }}</td>
-                <td>{{ $detail->status }}</td>
-            </tr>
-        @endforeach
-    </table>
-</div>
-<div>
-        <h2 style="font-weight: 400">Sells</h2>
-        <table border="1" class="table table-striped table-align-middle">
-            <tr>
-            
-                    <th>พนักงาน</th>
-                    <th>จำนวนคันที่ขายได้</th>
-                    <th>ยอดขาย</th>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
 
-                </tr>
-                @foreach ($sell as $sell)
-                    <tr class="column">
-                        <td>{{ $sell->firstName }} {{ $sell->lastName}}</td>
-                        <td>{{ $sell->total_order }}</td>
-                        <td>{{ $sell->total_price }}</td>
-                        </tr>
-        @endforeach
-    </table>
-</div>
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
-<div>
-    <h2 style="font-weight: 400">Quotation</h2>
-    <table border="1" class="table table-striped">
-        <tr>
-            <th>พนักงาน</th>
-            <th>ลูกค้า</th>
-            <th>สินค้า</th>
-            <th>สี</th>
-            <th>ราคา</th>
-        </tr>
+        .head {
+            background-color: #007bff;
+            color: #fff;
+        }
 
-        @foreach ($quotationdetail as $quotationdetail)
-            <tr>
-                <td>{{ $quotationdetail->firstName }} {{ $quotationdetail->lastName }}</td>
-                <td>{{ $quotationdetail->firstname }} {{ $quotationdetail->lastname }}</td>
-                <td>{{ $quotationdetail->productname }}</td>
-                <td>{{ $quotationdetail->color }}</td>
-                <td>{{ $quotationdetail->price }}</td>
-            </tr>
-        @endforeach
-    </table>
-</div>
-<div>
-    <h2 style="font-weight: 400">TotalQuotation</h2>
-    <table border="1" class="table table-striped">
-        <tr>
-            <th>พนักงาน</th>
-            <th>จำนวน</th>
-            <th>ยอดรวมราคา</th>
-        </tr>
+        .column:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-        @foreach ($quot as $quot)
-            <tr>
-                <td>{{ $quot->firstName }}  {{ $quot->lastName }}</td>
-                <td>{{ $quot->total_quotation }}</td>
-                <td>{{ $quot->total_price }}</td>
-            </tr>
-        @endforeach
-    </table>
-</div>
+        .success-message {
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-<div>
-    <h2 style="font-weight: 400">Sells/TotalQuotation*100</h2>
-    @if ($quot != null && $quot->total_quotation != 0)
-        {{ ($sell->total_order / $quot->total_quotation) * 100 }}
-    @else
-        0
+        .error-message {
+            color: #dc3545;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <h1>ผลการทำงาน</h1>
+
+    @if (session()->has('success'))
+        <div class="success-message">
+            {{ session('success') }}
+        </div>
     @endif
-</div>
 
-<div>
-        <h2 style="font-weight: 400">Feedbacks</h2>
-        <table border="1" class="table table-striped table-align-middle">
-            <tr>
+    <!-- Orders Table -->
+    <h2>ใบสั่งซื้อสินค้า</h2>
+    <div class="table table-responsive">
+        <table>
+            <tr class="head">
+                <th>พนักงาน</th>
+                <th>ลูกค้า</th>
+                <th>สินค้า</th>
+                <th>สี</th>
+                <th>ราคา</th>
+                <th>สถานะ</th>
+            </tr>
+            @foreach ($orderdetail as $detail)
+                <tr class="column">
+                    <td>{{ $detail->firstName }} {{ $detail->lastName }}</td>
+                    <td>{{ $detail->firstname }} {{ $detail->lastname }}</td>
+                    <td>{{ $detail->productname }}</td>
+                    <td>{{ $detail->color }}</td>
+                    <td>{{ $detail->price }}</td>
+                    <td>{{ $detail->status }}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+
+    <!-- Sells Table -->
+    <h2>ยอดขาย</h2>
+    <div class="table table-responsive">
+        <table>
+            <tr class="head">
+                <th>พนักงาน</th>
+                <th>จำนวนคันที่ขายได้</th>
+                <th>ยอดขาย</th>
+            </tr>
+            @foreach ($sell as $sells)
+                <tr class="column">
+                    <td>{{ $sells->firstName }} {{ $sells->lastName }}</td>
+                    <td>{{ $sells->total_order }}</td>
+                    <td>{{ $sells->total_price }}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+
+    <!-- Quotation Table -->
+    <h2>ใบเสนอราคา</h2>
+    <div class="table table-responsive">
+        <table>
+            <tr class="head">
+                <th>พนักงาน</th>
+                <th>ลูกค้า</th>
+                <th>สินค้า</th>
+                <th>สี</th>
+                <th>ราคา</th>
+            </tr>
+            @foreach ($quotationdetail as $quotationdetails)
+                <tr class="column">
+                    <td>{{ $quotationdetails->firstName }} {{ $quotationdetails->lastName }}</td>
+                    <td>{{ $quotationdetails->firstname }} {{ $quotationdetails->lastname }}</td>
+                    <td>{{ $quotationdetails->productname }}</td>
+                    <td>{{ $quotationdetails->color }}</td>
+                    <td>{{ $quotationdetails->price }}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+
+    <!-- TotalQuotation Table -->
+    <h2>ยอดใบเสนอราคา</h2>
+    <div class="table table-responsive">
+        <table>
+            <tr class="head">
+                <th>พนักงาน</th>
+                <th>จำนวน</th>
+                <th>ยอดรวมราคา</th>
+            </tr>
+            @foreach ($quot as $quots)
+                <tr class="column">
+                    <td>{{ $quots->firstName }} {{ $quots->lastName }}</td>
+                    <td>{{ $quots->total_quotation }}</td>
+                    <td>{{ $quots->total_price }}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+
+    <!-- Sells/TotalQuotation Table -->
+    <h2>Sells/TotalQuotation*100</h2>
+    <div>
+        @if ($quot != null && $quot->total_quotation != 0)
+            {{ ($sell->total_order / $quot->total_quotation) * 100 }}
+        @else
+            0
+        @endif
+    </div>
+
+    <!-- Feedbacks Table -->
+    <h2>ผลตอบรับของลูกค้า</h2>
+    <div class="table table-responsive">
+        <table>
+            <tr class="head">
                 <th>เลขออเดอร์</th>
                 <th>หัวข้อการประเมิน</th>
                 <th>คะแนน</th>
@@ -115,63 +171,60 @@
                 <th>ชื่อพนักงาน</th>
                 <th>ทีม</th>
                 <th>ราคา</th>
-                {{-- <th>edit</th>
-                <th>delete</th> --}}
             </tr>
             @foreach ($feedbacks as $feedback)
-    <tr>
-        <td>{{ $feedback->orderId }}</td>
-        <td>{{ $feedback->title }}</td>
-        <td>{{ $feedback->score }}</td>
-        <td>{{ $feedback->userName }}</td>
-        <td>{{ $feedback->firstName }} {{ $feedback->lastName }}</td>
-        <td>{{ $feedback->teamName }}</td>
-        <td>{{ $quotationdetail->price }}</td>
+                <tr class="column">
+                    <td>{{ $feedback->orderId }}</td>
+                    <td>{{ $feedback->title }}</td>
+                    <td>{{ $feedback->score }}</td>
+                    <td>{{ $feedback->userName }}</td>
+                    <td>{{ $feedback->firstName }} {{ $feedback->lastName }}</td>
+                    <td>{{ $feedback->teamName }}</td>
+                    <td>{{ $quotationdetail->price }}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>  
+
+    <!-- Evaluation Table -->
+    <h2>การประเมิน</h2>
+    <div class="table table-responsive">
+        <table>
+            <tr class="head">
+                <th>หัวข้อ</th>
+                <th>ผู้ประเมิน</th>
+                <th>ผู้ถูกประเมิน</th>
+                <th>ค่าน้ำหนัก</th>
+                <th>คะแนน</th>
             </tr>
-        @endforeach
-    </table>
-</div>
-<div>
-        <h2 style="font-weight: 400">Evaluation</h2>
-        <table border="1" class="table table-striped table-align-middle">
-            <tr>
-                    {{-- <th>รหัส</th> --}}
-                    <th>หัวข้อ</th>
-                    <th>ผู้ประเมิน</th>
-                    <th>ผู้ถูกประเมิน</th>
-                    <th>ค่าน้ำหนัก</th>
-                    <th>คะแนน</th>
-
+            @foreach ($results as $result)
+                <tr class="column">
+                    <td>{{ $result->title }}</td>
+                    <td>{{ $result->assessN }} {{ $result->assessF }}</td>
+                    <td>{{ $result->assessedN }} {{ $result->assessedF }}</td>
+                    <td>{{ $result->weight }}</td>
+                    <td>{{ $result->score }}</td>
                 </tr>
-                @foreach ($results as $result)
-                    <tr class="column">
-                        {{-- <td><label name="resultsId">{{ $result->resultsId  }}</label></td> --}}
-                        <td><label name="idcriterakipi">{{ $result->title }}</label></td>
-                        <td><label name="idevalution">{{ $result->assessN }} {{ $result->assessF }}</label></td>
-                        <td><label name="idevalution">{{ $result->assessedN }} {{ $result->assessedF }}</label></td>
-                        <td><label name="weight">{{ $result->weight }}</label></td>
-                        <td><label name="score">{{ $result->score }}</label></td>
-                        </tr>
-        @endforeach
-    </table>
-</div>
-<div>
-        <h2 style="font-weight: 400">Results</h2>
-        <table border="1" class="table table-striped table-align-middle">
-            <tr>
-            
-                    <th>ผู้ประเมิน</th>
-                    <th>ผู้ถูกประเมิน</th>
-                    <th>เกรด</th>
+            @endforeach
+        </table>
+    </div>
 
+    <!-- Results Table -->
+    <h2>ผลลัพธ์</h2>
+    <div class="table table-responsive">
+        <table>
+            <tr class="head">
+                <th>ผู้ประเมิน</th>
+                <th>ผู้ถูกประเมิน</th>
+                <th>เกรด</th>
+            </tr>
+            @foreach ($Grade as $grades)
+                <tr class="column">
+                    <td>{{ $grades->assessN }} {{ $grades->assessF }}</td>
+                    <td>{{ $grades->assessedN }} {{ $grades->assessedF }}</td>
+                    <td>{{ $grades->Grade }}</td>
                 </tr>
-                @foreach ($Grade as $Grade)
-                    <tr class="column">
-                        <td>{{ $Grade->assessN }} {{ $Grade->assessF }}</td>
-                        <td>{{ $Grade->assessedN }} {{ $Grade->assessedF }}</td>
-                        <td>{{ $Grade->Grade }}</td>
-                        </tr>
-        @endforeach
-    </table>
-</div>
+            @endforeach
+        </table>
+    </div>
 @endsection

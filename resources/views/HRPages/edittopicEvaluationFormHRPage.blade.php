@@ -78,7 +78,7 @@
 
         </div>
         <div>
-            <input type="submit" value="Update">
+            <input type="submit" value="บันทึก">
         </div>
     </form>
 </div>

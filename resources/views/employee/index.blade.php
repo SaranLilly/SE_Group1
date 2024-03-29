@@ -40,8 +40,8 @@
                 <th>email</th>
                 <th>ตำแหน่ง</th>
                 <th>ทีม</th>
-                <th>edit</th>
-                <th>delete</th>
+                <th>แก้ไข</th>
+                <th>ลบ</th>
                 <th>ผลการทำงาน</th>
                 
             </tr>
@@ -65,7 +65,7 @@
                     
                     
                     <td>
-                        <a class="btn btn-success" href="{{ route('employee.edit',['employee' => $employee->empID]) }}">Edit</a>
+                        <a class="btn btn-success" href="{{ route('employee.edit',['employee' => $employee->empID]) }}">แก้ไข</a>
                     </td>
                     <td>
                         <form method="POST" action="{{ route('employee.destroy',['employee'=> $employee->empID]) }}">

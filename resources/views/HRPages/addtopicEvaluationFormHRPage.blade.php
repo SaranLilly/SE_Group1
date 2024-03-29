@@ -81,7 +81,7 @@
         </div> --}}
 
         <div>
-            <input type="submit" value="Save New title">
+            <input type="submit" value="บันทึก">
         </div>
     </form>
 </div>

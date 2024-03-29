@@ -106,7 +106,7 @@
             </div>
 
             <div class="col-12">
-                <input type="submit" value="แก้ไข">
+                <input type="submit" value="บันทึก">
             </div>
         </form>
     </div>

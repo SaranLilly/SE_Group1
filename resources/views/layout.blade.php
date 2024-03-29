@@ -58,7 +58,6 @@
                             <ul class="dropdown-menu dropdown-menu-light border-0">
                                 <li><a class="dropdown-item text-dark"
                                         href="{{ route('employee.index') }}">ข้อมูลพนักงาน</a></li>
-                                <li><a class="dropdown-item text-dark" href="#">ข้อมูลพนักงานในทีม</a></li>
                             </ul>
                         </li>
 
@@ -76,11 +75,9 @@
                                         {{-- href="{{ route('criteriakpi.index') }}">หัวข้อการประเมิน</a></li> --}}
 
                                     href="{{ route('criteriakpiHR.index') }}">หัวข้อการประเมิน</a></li>
-{{-- 
+ 
                                 <li><a class="dropdown-item text-dark"
-                                        href="{{ route('criterion.index') }}">เกณฑ์การประเมิน</a></li> --}}
-
-                                
+                                        href="{{ route('criterion.index') }}">เกณฑ์การประเมิน</a></li> 
 
 
                                 <li><a class="dropdown-item text-dark"
