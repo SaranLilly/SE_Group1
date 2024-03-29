@@ -28,15 +28,15 @@
         <table style="width: 100%">
             <tr class="head" >
                 {{-- <th>ลำดับ</th> --}}
-                <th>คำนำหน้าชื่อ</th>
+                {{-- <th>คำนำหน้าชื่อ</th> --}}
                 <th>ชื่อ</th>
-                <th>นามสกุล</th>
-                <th>ชื่อเล่น</th>
+                {{-- <th>นามสกุล</th> --}}
+                {{-- <th>ชื่อเล่น</th> --}}
                 <th>userName</th>
-                <th>password</th>
+                {{-- <th>password</th> --}}
                 <th>เบอร์โทรศัพท์</th>
-                <th>รหัสบัตรประจำตัวประชาชน</th>
-                <th>วันเกิด</th>
+                {{-- <th>รหัสบัตรประจำตัวประชาชน</th> --}}
+                {{-- <th>วันเกิด</th> --}}
                 <th>email</th>
                 <th>ตำแหน่ง</th>
                 <th>ทีม</th>
@@ -49,15 +49,13 @@
             
                 <tr class="column">
                     {{-- <td>{{ $employee->empID}}</td> --}}
-                    <td>{{ $employee->prefix}}</td>
-                    <td>{{ $employee->firstName}}</td>
-                    <td>{{ $employee->lastName}}</td>
-                    <td>{{ $employee->nickname}}</td>
+                    <td>{{ $employee->prefix}}{{ $employee->firstName}} {{ $employee->lastName}}</td>
+                    {{-- <td>{{ $employee->nickname}}</td> --}}
                     <td>{{ $employee->userName}}</td>
-                    <td>{{ $employee->password}}</td>
+                   {{--  <td>{{ $employee->password}}</td> --}}
                     <td>{{ $employee->phoneNumber}}</td>
-                    <td>{{ $employee->idCard}}</td>
-                    <td>{{ $employee->birth}}</td>
+                  {{--   <td>{{ $employee->idCard}}</td> --}}
+                    {{-- <td>{{ $employee->birth}}</td> --}}
                     <td>{{ $employee->email}}</td>
                     <td>{{ $employee->positionName}}</td>
                     

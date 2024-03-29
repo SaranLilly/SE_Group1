@@ -68,10 +68,27 @@ class EvalutionController extends Controller
             'idround' => 'required',
             'idset' => 'required',
         ]);
-
+        //dd($request->idset);
         $eva = Evalution::create($data);
 
-        return redirect(route('evaluation.index'));
+        $criteriakpis = DB::select('SELECT * FROM criteriakpi
+        INNER JOIN selectionkpi ON selectionkpi.idcriteriakpi = criteriakpi.crID
+        INNER JOIN setkpi ON setkpi.idset = selectionkpi.idset
+        WHERE setkpi.idset = ?',[$request->idset]);
+                        
+        $selectionkpis = DB::select('SELECT * FROM criterion
+        INNER JOIN criteriakpi ON criteriakpi.crID = criterion.idcriteriakpi
+        INNER JOIN selectionkpi ON selectionkpi.idcriteriakpi = criterion.idcriteriakpi
+        INNER JOIN setkpi ON setkpi.idset = selectionkpi.idset
+        WHERE setkpi.idset = ?',[$request->idset]);
+
+        $evaluation = DB::select('SELECT * FROM `evaluation` 
+        INNER JOIN setkpi ON setkpi.idset = evaluation.idset
+        WHERE setkpi.idset =? and evaluation.idassess = ? and evaluation.idassessed = ?',[$request->idset,$request->idassess,$request->idassessed]);
+
+        //dd($evaluation);
+        return view('evaluation.evaform', compact('criteriakpis','selectionkpis','evaluation'));/* ['criteriakpis' => $criteriakpis , 'selectionkpis'=>$selectionkpis 
+                                            ,'evaluation'=>$evaluation]); */
     }
     public function edit(Evalution $evaluation)
     {

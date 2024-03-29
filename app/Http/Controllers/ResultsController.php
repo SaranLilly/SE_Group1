@@ -28,7 +28,7 @@ class ResultsController extends Controller
     }
     public function store(Request $request)
     {
-        //dd($request);
+        dd($request);
         $data = $request->validate([
             'idcriterakipi' => 'required',
             'idevalution' => 'required',
