@@ -150,7 +150,7 @@
     </div>
 
     <!-- Sells/TotalQuotation Table -->
-    <h2>Sells/TotalQuotation*100</h2>
+    <h2>เปอร์เซ็นความสำเร็จต่อการขาย</h2>
     <div>
         @if ($quot != null && $quot->total_quotation != 0)
             {{ ($sell->total_order / $quot->total_quotation) * 100 }}

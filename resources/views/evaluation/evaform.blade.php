@@ -6,6 +6,8 @@
 <div class="table">
 
     <form id="eva" method="post" action="{{route('result.store')}}">
+    {{-- <form id="eva" method="post" action="{{route('result.index)}}"> --}}
+        
         @csrf
         @method('post')
         <table style="width:100%; border-collapse: collapse;">
