@@ -15,7 +15,7 @@ class ResultsController extends Controller
         FROM results
         LEFT JOIN evaluation  ON results.idevalution = evaluation.idevaluation
         LEFT JOIN (SELECT * FROM employee) as e1 ON e1.empID = evaluation.idassess
-        LEFT JOIN (SELECT * FROM employee) as e2 ON e2.empID = evaluation.idassessed  
+        LEFT JOIN (SELECT * FROM employee) as e2 ON e2.empID = evaluation.idassessed
         INNER JOIN criteriakpi ON results.idcriterakipi = criteriakpi.crID ORDER BY `assessedN` ASC');
 
         return view('result.index', ['results' => $results]);
@@ -26,20 +26,52 @@ class ResultsController extends Controller
         $criteriakpis = DB::table('criteriakpi')->get();
         return view('result.create', ['criteriakpis' => $criteriakpis, 'evaluations' => $evaluations]);
     }
+    // public function store(Request $request)
+    // {
+    //     //dd($request);
+    //     $data = $request->validate([
+    //         'idcriterakipi' => 'required',
+    //         'idevalution' => 'required',
+    //         'weight' => 'required',
+    //         'score' => 'required',
+    //     ]);
+    //     //dd($data);
+    //     Results::create($data);
+
+    //     return redirect(route('result.index'));
+    // }
     public function store(Request $request)
     {
-        dd($request);
         $data = $request->validate([
-            'idcriterakipi' => 'required',
+            'idcriterakipi' => 'required|array',
+            'idcriterakipi.*' => 'required',
             'idevalution' => 'required',
             'weight' => 'required',
-            'score' => 'required',
+            'score' => 'required|array',
+            'score.*' => 'required',
         ]);
-        //dd($data);
-        Results::create($data);
+
+        // ตรวจสอบความยาวของค่า idcriterakipi และ score ว่าเท่ากันหรือไม่
+        if (count($data['idcriterakipi']) !== count($data['score'])) {
+            return redirect()->back()->withErrors(['error' => 'ค่า idcriterakipi และ score ไม่สอดคล้องกัน']);
+        }
+
+        // ตรวจสอบและปรับปรุงค่าตามที่คุณต้องการก่อนบันทึกลงในฐานข้อมูล
+
+        // บันทึกข้อมูล
+        foreach ($data['idcriterakipi'] as $key => $idcriterakipi) {
+            $resultData = [
+                'idcriterakipi' => $idcriterakipi,
+                'idevalution' => $data['idevalution'],
+                'weight' => $data['weight'],
+                'score' => $data['score'][$key],
+            ];
+            Results::create($resultData);
+        }
 
         return redirect(route('result.index'));
     }
+
     public function edit(Results $result)
     {
         $evaluations = Evalution::all();
