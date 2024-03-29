@@ -21,7 +21,10 @@
                     <td>{{ $select->max}} - {{$select->min}}</td>
 
                     <td><input value="{{ $select->score }}" type="hidden" name="weight">{{ $select->levelOfQuality}}</td>
+                    {{-- อันนี้ใช้ได้ --}}
                     <td><input type="checkbox" class="single-checkbox" value="{{ $select->score }}" name="score[]" ></td>
+                    {{-- <td><input type="checkbox" class="single-checkbox" value="{{ $select->score }}" name="score[]" data-weight="{{ $select->weight }}">{{ $select->levelOfQuality}}</td> --}}
+
                 </tr>
                 @endif
             @endforeach
@@ -34,6 +37,22 @@
      </div>
 </form>
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var checkboxes = document.querySelectorAll('.single-checkbox');
+
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            var weightInput = this.parentNode.parentNode.querySelector('input[name="weight[]"]');
+            if (this.checked) {
+                weightInput.value = this.getAttribute('data-weight');
+            } else {
+                weightInput.value = '';
+            }
+        });
+    });
+});
+
+    // ใช้ได้
     function validateForm() {
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
         var isChecked = false;
